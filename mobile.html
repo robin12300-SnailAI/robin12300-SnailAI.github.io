@@ -344,6 +344,68 @@
   .faq-entry h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; }
   .faq-entry p { color: var(--ink-3); margin-bottom: 24px; font-size: 1.02rem; }
 
+  /* ===== Schedule ===== */
+  .schedule-section { background: var(--paper); }
+  .schedule-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .schedule-cohort {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: all .3s ease;
+  }
+  .schedule-cohort:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .cohort-header {
+    padding: 18px 20px 12px;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .cohort-badge {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .cohort-badge.apply { background: var(--accent-light); color: var(--accent); }
+  .cohort-badge.wealth { background: rgba(212,165,71,0.12); color: var(--gold); }
+  .cohort-title { font-size: 1rem; font-weight: 800; line-height: 1.3; }
+  .cohort-subtitle { font-size: 0.72rem; color: var(--ink-3); font-weight: 500; }
+  .cohort-body { padding: 16px 20px 18px; }
+  .cohort-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .cohort-row:last-child { margin-bottom: 0; }
+  .cohort-label {
+    flex-shrink: 0; width: 48px;
+    font-size: 0.68rem; font-weight: 700; color: var(--ink-3);
+    text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--mono);
+  }
+  .cohort-value { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+  .cohort-value .date-accent { color: var(--accent); }
+  .cohort-value .date-gold { color: var(--gold); }
+
+  .retake-policy {
+    background: var(--accent-warm);
+    border: 2px solid rgba(255,91,31,0.15);
+    border-radius: var(--r-lg);
+    padding: 24px 22px;
+  }
+  .retake-policy h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+  .retake-policy p { font-size: 0.88rem; color: var(--ink-2); margin-bottom: 8px; line-height: 1.7; }
+  .retake-conditions { list-style: none; padding: 0; margin: 10px 0 0; }
+  .retake-conditions li {
+    position: relative; padding-left: 20px; margin-bottom: 8px;
+    font-size: 0.86rem; color: var(--ink-2); line-height: 1.6;
+  }
+  .retake-conditions li::before {
+    content: '✓'; position: absolute; left: 0;
+    color: var(--accent); font-weight: 800; font-size: 0.95rem;
+  }
+
   /* ===== Footer ===== */
   .footer {
     background: var(--paper-2);
@@ -435,6 +497,7 @@
   <div class="nav-links">
     <a href="#team" data-zh="团队" data-en="Team">团队</a>
     <a href="#services" data-zh="服务" data-en="Services">服务</a>
+    <a href="#schedule" data-zh="课程表" data-en="Schedule">课程表</a>
     <a href="#videos" data-zh="视频" data-en="Videos">视频</a>
     <a href="/faq/mobile" data-zh="FAQ" data-en="FAQ">FAQ</a>
     <div class="lang-switch">
@@ -565,6 +628,125 @@
         <span class="price" data-zh="AUD $299 / 小时" data-en="AUD $299 / hour">AUD $299 / 小时</span>
         <a href="mailto:hello@snailai.au" class="link" data-zh="预约咨询 →" data-en="Book Now →">预约咨询 →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHEDULE ===== -->
+<section id="schedule" class="schedule-section">
+  <div class="section-inner">
+    <div class="section-tag" data-zh="Schedule" data-en="Schedule">Schedule</div>
+    <h2 class="section-title" data-zh="开班时间表" data-en="Course Schedule">开班时间表</h2>
+    <p class="section-desc" data-zh="两条学习路径，灵活入学，随时开始你的 AI 之旅。" data-en="Two learning tracks, flexible enrollment — start your AI journey anytime.">两条学习路径，灵活入学，随时开始你的 AI 之旅。</p>
+
+    <div class="schedule-timeline">
+      <!-- 第一期 -->
+      <div class="schedule-cohort">
+        <div class="cohort-header">
+          <div class="cohort-badge apply">💻</div>
+          <div>
+            <div class="cohort-title" data-zh="AI 应用 第1期" data-en="AI Application · Cohort 1">AI 应用 第1期</div>
+            <div class="cohort-subtitle" data-zh="线上课 · 12 周 · 24 课时" data-en="Online · 12 Weeks · 24 Lessons">线上课 · 12 周 · 24 课时</div>
+          </div>
+        </div>
+        <div class="cohort-body">
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="开课" data-en="START">开课</span>
+            <span class="cohort-value"><span class="date-accent">2026 年 7 月 7 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="结课" data-en="END">结课</span>
+            <span class="cohort-value"><span class="date-accent">2026 年 10 月 7 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="时间" data-en="TIME">时间</span>
+            <span class="cohort-value" data-zh="每周二晚 8:30 - 10:00 (AEST)" data-en="Every Tue 8:30 - 10:00 PM (AEST)">每周二晚 8:30 - 10:00 (AEST)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-cohort">
+        <div class="cohort-header">
+          <div class="cohort-badge wealth">💰</div>
+          <div>
+            <div class="cohort-title" data-zh="AI 财富 第1期" data-en="AI Wealth · Cohort 1">AI 财富 第1期</div>
+            <div class="cohort-subtitle" data-zh="线下课 · 13 周 · 18 课时" data-en="In-Person · 13 Weeks · 18 Lessons">线下课 · 13 周 · 18 课时</div>
+          </div>
+        </div>
+        <div class="cohort-body">
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="开课" data-en="START">开课</span>
+            <span class="cohort-value"><span class="date-gold">2026 年 7 月 11 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="结课" data-en="END">结课</span>
+            <span class="cohort-value"><span class="date-gold">2026 年 10 月 11 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="时间" data-en="TIME">时间</span>
+            <span class="cohort-value" data-zh="每周六下午 2:00 - 5:00 (AEST)" data-en="Every Sat 2:00 - 5:00 PM (AEST)">每周六下午 2:00 - 5:00 (AEST)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第二期 -->
+      <div class="schedule-cohort">
+        <div class="cohort-header">
+          <div class="cohort-badge apply">💻</div>
+          <div>
+            <div class="cohort-title" data-zh="AI 应用 第2期" data-en="AI Application · Cohort 2">AI 应用 第2期</div>
+            <div class="cohort-subtitle" data-zh="线上课 · 12 周 · 24 课时" data-en="Online · 12 Weeks · 24 Lessons">线上课 · 12 周 · 24 课时</div>
+          </div>
+        </div>
+        <div class="cohort-body">
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="开课" data-en="START">开课</span>
+            <span class="cohort-value"><span class="date-accent">2026 年 10 月 20 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="结课" data-en="END">结课</span>
+            <span class="cohort-value"><span class="date-accent">2027 年 1 月 20 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="时间" data-en="TIME">时间</span>
+            <span class="cohort-value" data-zh="每周二晚 8:30 - 10:00 (AEDT)" data-en="Every Tue 8:30 - 10:00 PM (AEDT)">每周二晚 8:30 - 10:00 (AEDT)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-cohort">
+        <div class="cohort-header">
+          <div class="cohort-badge wealth">💰</div>
+          <div>
+            <div class="cohort-title" data-zh="AI 财富 第2期" data-en="AI Wealth · Cohort 2">AI 财富 第2期</div>
+            <div class="cohort-subtitle" data-zh="线下课 · 13 周 · 18 课时" data-en="In-Person · 13 Weeks · 18 Lessons">线下课 · 13 周 · 18 课时</div>
+          </div>
+        </div>
+        <div class="cohort-body">
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="开课" data-en="START">开课</span>
+            <span class="cohort-value"><span class="date-gold">2026 年 10 月 24 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="结课" data-en="END">结课</span>
+            <span class="cohort-value"><span class="date-gold">2027 年 1 月 24 日</span></span>
+          </div>
+          <div class="cohort-row">
+            <span class="cohort-label" data-zh="时间" data-en="TIME">时间</span>
+            <span class="cohort-value" data-zh="每周六下午 2:00 - 5:00 (AEDT)" data-en="Every Sat 2:00 - 5:00 PM (AEDT)">每周六下午 2:00 - 5:00 (AEDT)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 复训政策 -->
+    <div class="retake-policy">
+      <h3 data-zh="🔄 无限期复训政策" data-en="🔄 Lifetime Retake Policy">🔄 无限期复训政策</h3>
+      <p data-zh="只要交了学费，就可以随时入学。所有学员拥有无限期复训的权利，以下是两个条件：" data-en="Once you've paid tuition, you can enroll anytime. All students have lifetime retake privileges, subject to two conditions:">只要交了学费，就可以随时入学。所有学员拥有无限期复训的权利，以下是两个条件：</p>
+      <ul class="retake-conditions">
+        <li data-zh="做课堂助教 —— 协助新学员尽快上手，教学相长" data-en="Serve as a classroom TA — help new students get up to speed, teach and learn together">做课堂助教 —— 协助新学员尽快上手，教学相长</li>
+        <li data-zh="好位置让给新学员 —— 把前排座位留给第一次来的新手" data-en="Give prime seats to new students — save front-row seats for first-timers">好位置让给新学员 —— 把前排座位留给第一次来的新手</li>
+      </ul>
     </div>
   </div>
 </section>
