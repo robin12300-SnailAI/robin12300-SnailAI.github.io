@@ -28,6 +28,7 @@
     "offline_course": "/offline-course/"
   },
   "changelog": [
-    "1.0.0 (2026-07-05): Initial release on GitHub Pages — home, FAQ, online course, offline course, assets"
+    "1.0.0 (2026-07-05): Initial release on GitHub Pages — home, FAQ, online course, offline course, assets",
+    "offline-v1.0.0 (2026-07-05): Sync offline course from chocolate, add version tag V1.0.0"
   ]
 }
