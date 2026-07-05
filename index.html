@@ -147,18 +147,37 @@
 
   .hero-quote {
     max-width: 720px; margin: 56px auto 0;
-    padding: 24px 32px;
+    padding: 28px 32px;
     background: var(--accent-warm);
-    border-left: 4px solid var(--accent);
+    border: 1px solid rgba(255,91,31,0.2);
     border-radius: var(--r-md);
     text-align: left;
+    position: relative;
   }
-  .hero-quote-text {
+  .hero-quote::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 18px;
+    font-size: 3.5rem;
+    color: var(--accent);
+    font-family: Georgia, serif;
+    line-height: 1;
+    opacity: 0.5;
+  }
+  .hero-quote .quote-main {
     font-size: 1.05rem; font-weight: 600; color: var(--ink);
-    margin-bottom: 8px; line-height: 1.6;
+    line-height: 1.65; margin-bottom: 12px;
   }
-  .hero-quote em { color: var(--accent); font-style: normal; font-weight: 800; }
-  .hero-quote-sub { font-size: 0.92rem; color: var(--ink-3); }
+  .hero-quote .quote-main em { color: var(--accent); font-style: normal; font-weight: 800; }
+  .hero-quote .quote-sub {
+    font-size: 0.9rem; color: var(--ink-3);
+    line-height: 1.7; font-weight: 400; margin-bottom: 14px;
+  }
+  .hero-quote .quote-cta {
+    display: inline-block;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--accent);
+  }
 
   /* ===== Section base ===== */
   section { padding: 100px 40px; }
@@ -602,8 +621,9 @@
     <a href="/faq/" class="btn btn-secondary" data-zh="❓ 常见问题" data-en="❓ FAQ">❓ 常见问题</a>
   </div>
   <div class="hero-quote">
-    <div class="hero-quote-text" data-zh="👉 参加蜗牛 AI 的 3 个月学习计划 — <em>24 课时、5 大模块、从 0 到 1 真正会用 AI</em>" data-en="👉 Join the Snail AI 3-month program — <em>24 lessons, 5 modules, from 0 to 1 actually using AI</em>">👉 参加蜗牛 AI 的 3 个月学习计划 — <em>24 课时、5 大模块、从 0 到 1 真正会用 AI</em></div>
-    <div class="hero-quote-sub" data-zh="学会 · 应用 · 享受 · 投资" data-en="Learn · Apply · Enjoy · Invest">学会 · 应用 · 享受 · 投资</div>
+    <div class="quote-main" data-zh="打败你的不是 AI，是<em>会使用 AI 的人</em>。<br>AI 不是你的对手，而是你的机甲。" data-en="AI won't replace you. A <em>person using AI</em> will.<br>AI is not your rival — it's your exosuit.">打败你的不是 AI，是<em>会使用 AI 的人</em>。<br>AI 不是你的对手，而是你的机甲。</div>
+    <div class="quote-sub" data-zh="就像变形金刚穿上机甲就变得超级强大 — 在这个时代，你不用 AI，有的是其他人用 AI。<br>不主动学习的人，会被 AI 时代悄悄淘汰。" data-en="Just like a Transformer becomes super-powered in its exosuit — in this era, if you don't use AI, someone else will.<br>Those who don't choose to learn will be quietly left behind.">就像变形金刚穿上机甲就变得超级强大 — 在这个时代，你不用 AI，有的是其他人用 AI。<br>不主动学习的人，会被 AI 时代悄悄淘汰。</div>
+    <div class="quote-cta" data-zh="→ 主动选择学习 AI，成为 AI 时代的先行者" data-en="→ Choose to learn AI. Become a pioneer of the AI era.">→ 主动选择学习 AI，成为 AI 时代的先行者</div>
   </div>
 </section>
 
