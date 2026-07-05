@@ -124,6 +124,33 @@
     margin: 0 auto 40px;
     line-height: 1.65;
   }
+  .hero-badge-row {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    margin: 20px auto 32px; max-width: 600px; padding: 0 8px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 7px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .hero-badge--orange {
+    background: var(--accent); color: white;
+    box-shadow: 0 4px 16px rgba(255,91,31,0.28);
+  }
+  .hero-badge--ink {
+    background: var(--ink); color: white;
+    box-shadow: 0 4px 16px rgba(26,26,46,0.18);
+  }
+  .hero-badge--outline {
+    background: white; color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .hero-badge--warm {
+    background: var(--accent-warm); color: var(--accent);
+    border: 1.5px solid rgba(255,91,31,0.2);
+  }
+
   .hero-cta {
     display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
   }
@@ -521,6 +548,8 @@
     .hero-tag { font-size: 11px; padding: 5px 12px; margin-bottom: 18px; }
     .hero h1 { font-size: 1.85rem; margin-bottom: 14px; }
     .hero .subtitle { font-size: 0.95rem; margin-bottom: 28px; }
+    .hero-badge-row { gap: 6px; margin: 16px auto 28px; }
+    .hero-badge { font-size: 10.5px; padding: 5px 10px; }
     .hero-cta { flex-direction: column; align-items: stretch; }
     .btn { padding: 12px 22px; font-size: 13px; justify-content: center; }
     .hero-quote { padding: 18px 20px; margin-top: 36px; }
@@ -586,6 +615,12 @@
     <span class="accent" data-zh="会使用 AI 的人" data-en="a person using AI will">会使用 AI 的人</span>
   </h1>
   <p class="subtitle" data-zh="AI 不是你的对手，而是你的机甲。蜗牛 AI 帮你把 AI 真正用到澳洲生活、学习、工作和投资里。" data-en="AI is not your opponent, it's your mecha. Snail AI helps you actually apply AI in Australian life, learning, work, and investing.">AI 不是你的对手，而是你的机甲。蜗牛 AI 帮你把 AI 真正用到澳洲生活、学习、工作和投资里。</p>
+  <div class="hero-badge-row">
+    <span class="hero-badge hero-badge--orange" data-zh="🇦🇺 蜗牛 AI 专注澳洲华人 AI 应用教育" data-en="🇦🇺 Snail AI — Australian Chinese AI Education">🇦🇺 蜗牛 AI 专注澳洲华人 AI 应用教育</span>
+    <span class="hero-badge hero-badge--ink" data-zh="🎓 首创输出式教学" data-en="🎓 Pioneer of Output-Driven Teaching">🎓 首创输出式教学</span>
+    <span class="hero-badge hero-badge--warm" data-zh="🏆 澳大利亚最优质的华人 AI 应用培训机构" data-en="🏆 Australia's Premier Chinese AI Training Institute">🏆 澳大利亚最优质的华人 AI 应用培训机构</span>
+    <span class="hero-badge hero-badge--outline" data-zh="📌 专门针对澳洲工作、生活等应用场景" data-en="📌 Tailored for Australian Work & Life Scenarios">📌 专门针对澳洲工作、生活等应用场景</span>
+  </div>
   <div class="hero-cta">
     <a href="#services" class="btn btn-primary" data-zh="查看课程 →" data-en="View Courses →">查看课程 →</a>
     <a href="/faq/mobile" class="btn btn-secondary" data-zh="FAQ 常见问题" data-en="FAQ">FAQ 常见问题</a>
