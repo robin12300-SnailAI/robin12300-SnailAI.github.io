@@ -8,7 +8,7 @@
 
 - 📚 [线上课大纲](https://robin12300-snailai.github.io/online-course/) — 24 节课时系统课
 - 🏫 [线下课大纲](https://robin12300-snailai.github.io/offline-course/) — 面对面深度实战
-- ❓ [常见问题 FAQ](https://robin12300-snailai.github.io/faq/) — 12 个高频问答
+- 📋 [FAQ 常见问题](https://robin12300-snailai.github.io/faq/) — 12 个高频问答
 - 📺 [YouTube 频道](https://www.youtube.com/@snailai-au) — 公开课 / 直播回放
 - 💬 微信公众号：**蜗牛 AI 在澳洲**
 - 🎬 视频号：**蜗牛 AI-AU**
