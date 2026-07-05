@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蜗牛 AI · 澳洲华人 AI 应用私享会</title>
+<meta name="description" content="蜗牛 AI 是面向澳洲华人的 AI 应用学习社群。我们提供线上课、线下课、财富管理课、企业微信社群、1 对 1 咨询。学会用 AI，把 AI 当成你的机甲。">
+<link rel="icon" type="image/png" href="assets/snailai_logo.png">
+<style>
+  :root {
+    --ink: #1A1A2E;
+    --ink-2: #2A2A40;
+    --ink-3: #6A6A85;
+    --paper: #FCFCFA;
+    --paper-2: #F5F4EE;
+    --paper-3: #E8E7E0;
+    --accent: #FF5B1F;
+    --accent-2: #E84A0F;
+    --accent-light: rgba(255,91,31,0.08);
+    --accent-warm: #FFF5EE;
+    --gold: #D4A547;
+    --line: rgba(26,26,46,0.08);
+    --shadow-sm: 0 1px 3px rgba(26,26,46,0.04), 0 2px 8px rgba(26,26,46,0.04);
+    --shadow-md: 0 4px 16px rgba(26,26,46,0.08);
+    --shadow-lg: 0 12px 36px rgba(26,26,46,0.12);
+    --r-sm: 6px;
+    --r-md: 10px;
+    --r-lg: 16px;
+    --r-xl: 24px;
+    --sans: 'Inter','Helvetica Neue','Helvetica','Arial','PingFang SC','Microsoft YaHei UI','Noto Sans SC',sans-serif;
+    --mono: 'JetBrains Mono','SF Mono','Menlo','Consolas',monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 40px;
+    background: linear-gradient(180deg, rgba(252,252,250,.96) 0%, rgba(252,252,250,.85) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .nav-logo img { height: 32px; width: auto; }
+  .nav-logo span { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    font-size: 13px; font-weight: 600; color: var(--ink-3);
+    text-decoration: none; letter-spacing: 0.02em;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .lang-switch {
+    display: inline-flex; gap: 4px;
+    border: 1px solid var(--line); border-radius: 100px; padding: 3px;
+    background: white;
+  }
+  .lang-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 5px 12px; border-radius: 100px;
+    font-size: 12px; font-weight: 700; color: var(--ink-3);
+    transition: all .2s;
+  }
+  .lang-btn.active { background: var(--ink); color: white; }
+
+  /* ===== Hero ===== */
+  .hero {
+    position: relative;
+    padding: 140px 40px 100px;
+    max-width: 1280px; margin: 0 auto;
+    text-align: center;
+  }
+  .hero-bg-blob {
+    position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(255,91,31,0.06) 0%, transparent 60%);
+    z-index: -1; pointer-events: none;
+  }
+  .hero-logo {
+    width: 120px; height: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 8px 24px rgba(255,91,31,0.18));
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+  .hero-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent-light);
+    border: 1px solid rgba(255,91,31,0.18);
+    color: var(--accent);
+    border-radius: 100px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero .subtitle {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: var(--ink-3);
+    max-width: 720px;
+    margin: 0 auto 40px;
+    line-height: 1.65;
+  }
+  .hero-cta {
+    display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 100px;
+    font-size: 14px; font-weight: 700;
+    text-decoration: none; transition: all .25s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent); color: white;
+    box-shadow: 0 4px 16px rgba(255,91,31,0.24);
+  }
+  .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,91,31,0.36); }
+  .btn-secondary {
+    background: white; color: var(--ink); border-color: var(--line);
+  }
+  .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+  .hero-quote {
+    max-width: 720px; margin: 56px auto 0;
+    padding: 24px 32px;
+    background: var(--accent-warm);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--r-md);
+    text-align: left;
+  }
+  .hero-quote-text {
+    font-size: 1.05rem; font-weight: 600; color: var(--ink);
+    margin-bottom: 8px; line-height: 1.6;
+  }
+  .hero-quote em { color: var(--accent); font-style: normal; font-weight: 800; }
+  .hero-quote-sub { font-size: 0.92rem; color: var(--ink-3); }
+
+  /* ===== Section base ===== */
+  section { padding: 100px 40px; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    padding: 5px 14px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 100px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900; letter-spacing: -0.02em;
+    line-height: 1.2; margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 1.05rem; color: var(--ink-3);
+    max-width: 640px; margin-bottom: 56px;
+  }
+
+  /* ===== Team ===== */
+  .team-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 24px 20px;
+    text-align: center;
+    transition: all .3s ease;
+  }
+  .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(255,91,31,0.3); }
+  .team-card .qr {
+    width: 100%; max-width: 160px; height: auto;
+    aspect-ratio: 1/1;
+    border-radius: var(--r-md);
+    background: #fff; border: 1px solid var(--line);
+    margin: 0 auto 16px;
+    object-fit: cover;
+  }
+  .team-card .avatar {
+    width: 100%; max-width: 160px; height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px;
+    border: 3px solid var(--paper-2);
+  }
+  .team-card h3 {
+    font-size: 1.05rem; font-weight: 800; margin-bottom: 4px;
+  }
+  .team-card .role {
+    font-size: 11px; color: var(--ink-3);
+    font-family: var(--mono); letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .team-card .bio {
+    font-size: 0.86rem; color: var(--ink-3); line-height: 1.55;
+    min-height: 80px;
+  }
+  .team-card.founder {
+    background: linear-gradient(135deg, var(--accent-warm) 0%, white 100%);
+    border-color: rgba(255,91,31,0.2);
+  }
+  .team-card.founder .role { color: var(--accent); font-weight: 700; }
+
+  /* ===== Services ===== */
+  .services-section { background: var(--paper-2); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: 32px 28px;
+    transition: all .3s ease;
+    display: flex; flex-direction: column;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+  .service-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+  }
+  .service-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
+  .service-card p { font-size: 0.92rem; color: var(--ink-3); line-height: 1.6; flex: 1; }
+  .service-card .price {
+    display: inline-block; margin-top: 16px;
+    font-family: var(--mono); font-weight: 700; color: var(--accent);
+    font-size: 0.9rem;
+  }
+  .service-card .link {
+    display: inline-block; margin-top: 14px;
+    color: var(--accent); font-size: 0.88rem; font-weight: 700;
+    text-decoration: none;
+  }
+  .service-card .link:hover { color: var(--accent-2); }
+
+  /* ===== Videos ===== */
+  .videos-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .video-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: all .3s ease;
+  }
+  .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .video-frame {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: var(--ink);
+    overflow: hidden;
+  }
+  .video-frame iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; border: 0;
+  }
+  .video-frame .play {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+  }
+  .video-info { padding: 20px 22px; }
+  .video-info h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+  .video-info p { font-size: 0.88rem; color: var(--ink-3); }
+  .video-info .meta {
+    display: inline-block; margin-top: 10px;
+    font-family: var(--mono); font-size: 0.72rem;
+    color: var(--accent); font-weight: 700; letter-spacing: 0.05em;
+  }
+
+  /* ===== Channels ===== */
+  .channels-section { background: var(--ink); color: white; }
+  .channels-section .section-tag { background: rgba(255,91,31,0.18); color: var(--accent); }
+  .channels-section .section-title { color: white; }
+  .channels-section .section-desc { color: rgba(255,255,255,0.55); }
+  .channels-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .channel-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--r-lg);
+    padding: 28px;
+    text-align: center;
+    transition: all .3s ease;
+  }
+  .channel-card:hover { background: rgba(255,255,255,0.08); border-color: var(--accent); }
+  .channel-card .qr {
+    width: 160px; height: 160px;
+    border-radius: var(--r-md);
+    background: white;
+    margin: 0 auto 18px;
+    object-fit: contain;
+    padding: 8px;
+  }
+  .channel-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+  .channel-card p { font-size: 0.86rem; color: rgba(255,255,255,0.55); }
+
+  /* ===== FAQ Entry ===== */
+  .faq-entry {
+    background: var(--accent-warm);
+    border-radius: var(--r-xl);
+    padding: 48px 56px;
+    text-align: center;
+    border: 2px solid rgba(255,91,31,0.15);
+  }
+  .faq-entry h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; }
+  .faq-entry p { color: var(--ink-3); margin-bottom: 24px; font-size: 1.02rem; }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: var(--paper-2);
+    border-top: 1px solid var(--line);
+    padding: 36px 40px;
+    text-align: center;
+  }
+  .footer .brand-logo { height: 36px; margin-bottom: 12px; }
+  .footer p { font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.04em; }
+  .footer .links { margin-top: 12px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .footer .links a { color: var(--ink-3); text-decoration: none; font-size: 0.78rem; }
+  .footer .links a:hover { color: var(--accent); }
+  .footer .version {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 900px) {
+    .nav { padding: 12px 20px; }
+    .nav-links a:not(.btn) { display: none; }
+    section { padding: 64px 20px; }
+    .hero { padding: 110px 20px 70px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .videos-grid { grid-template-columns: 1fr; }
+    .channels-grid { grid-template-columns: 1fr; }
+    .faq-entry { padding: 36px 28px; }
+  }
+
+  /* ===== MOBILE OPTIMIZATIONS ===== */
+  @media (max-width: 640px) {
+    .nav { padding: 12px 16px; }
+    .nav-logo span { display: none; }
+    .nav-links { gap: 12px; }
+    .nav-links a:not(.btn) { display: none; }
+    .lang-switch { padding: 2px; }
+    .lang-btn { padding: 4px 10px; font-size: 11px; }
+
+    section { padding: 56px 18px; }
+    .hero { padding: 96px 18px 56px; }
+    .hero-logo { width: 88px; margin-bottom: 18px; }
+    .hero-tag { font-size: 11px; padding: 5px 12px; margin-bottom: 18px; }
+    .hero h1 { font-size: 1.85rem; margin-bottom: 14px; }
+    .hero .subtitle { font-size: 0.95rem; margin-bottom: 28px; }
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .btn { padding: 12px 22px; font-size: 13px; justify-content: center; }
+    .hero-quote { padding: 18px 20px; margin-top: 36px; }
+    .hero-quote-text { font-size: 0.95rem; }
+    .hero-quote-sub { font-size: 0.82rem; }
+
+    .section-tag { font-size: 11px; padding: 4px 10px; margin-bottom: 12px; }
+    .section-title { font-size: 1.65rem; margin-bottom: 12px; }
+    .section-desc { font-size: 0.92rem; margin-bottom: 32px; }
+
+    .team-grid { grid-template-columns: 1fr; gap: 16px; }
+    .team-card { padding: 20px 18px; }
+    .team-card .avatar, .team-card .qr { max-width: 130px; height: 130px; }
+    .team-card .bio { min-height: auto; font-size: 0.82rem; }
+
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+    .service-card { padding: 24px 22px; }
+
+    .videos-grid { grid-template-columns: 1fr; gap: 18px; }
+
+    .channels-grid { grid-template-columns: 1fr; gap: 18px; }
+    .channel-card { padding: 22px 18px; }
+    .channel-card .qr { width: 130px; height: 130px; }
+
+    .faq-entry { padding: 30px 22px; }
+    .faq-entry h2 { font-size: 1.4rem; }
+
+    .footer { padding: 28px 20px; }
+    .footer .links { gap: 14px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="assets/snailai_logo.png" alt="蜗牛 AI Logo">
+    <span data-zh="蜗牛 AI" data-en="Snail AI">蜗牛 AI</span>
+  </a>
+  <div class="nav-links">
+    <a href="#team" data-zh="团队" data-en="Team">团队</a>
+    <a href="#services" data-zh="服务" data-en="Services">服务</a>
+    <a href="#videos" data-zh="视频" data-en="Videos">视频</a>
+    <a href="/faq/mobile" data-zh="FAQ" data-en="FAQ">FAQ</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg-blob"></div>
+  <img src="assets/snailai_logo.png" alt="蜗牛 AI Logo" class="hero-logo">
+  <div class="hero-tag" data-zh="🦄 澳洲华人 AI 应用私享会" data-en="🦄 Australian Chinese AI Community">🦄 澳洲华人 AI 应用私享会</div>
+  <h1>
+    <span data-zh="打败你的不是 AI，是" data-en="AI won't replace you, ">打败你的不是 AI，是</span>
+    <span class="accent" data-zh="会使用 AI 的人" data-en="a person using AI will">会使用 AI 的人</span>
+  </h1>
+  <p class="subtitle" data-zh="AI 不是你的对手，而是你的机甲。蜗牛 AI 帮你把 AI 真正用到澳洲生活、学习、工作和投资里。" data-en="AI is not your opponent, it's your mecha. Snail AI helps you actually apply AI in Australian life, learning, work, and investing.">AI 不是你的对手，而是你的机甲。蜗牛 AI 帮你把 AI 真正用到澳洲生活、学习、工作和投资里。</p>
+  <div class="hero-cta">
+    <a href="#services" class="btn btn-primary" data-zh="查看课程 →" data-en="View Courses →">查看课程 →</a>
+    <a href="/faq/mobile" class="btn btn-secondary" data-zh="❓ 常见问题" data-en="❓ FAQ">❓ 常见问题</a>
+  </div>
+  <div class="hero-quote">
+    <div class="hero-quote-text" data-zh="👉 参加蜗牛 AI 的 3 个月学习计划 — <em>24 课时、5 大模块、从 0 到 1 真正会用 AI</em>" data-en="👉 Join the Snail AI 3-month program — <em>24 lessons, 5 modules, from 0 to 1 actually using AI</em>">👉 参加蜗牛 AI 的 3 个月学习计划 — <em>24 课时、5 大模块、从 0 到 1 真正会用 AI</em></div>
+    <div class="hero-quote-sub" data-zh="学会 · 应用 · 享受 · 投资" data-en="Learn · Apply · Enjoy · Invest">学会 · 应用 · 享受 · 投资</div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team">
+  <div class="section-inner">
+    <div class="section-tag" data-zh="Team" data-en="Team">Team</div>
+    <h2 class="section-title" data-zh="我们的团队" data-en="Our Team">我们的团队</h2>
+    <p class="section-desc" data-zh="Robin 联合 Michael、James、Jason、Sean，五位华人 AI 实践者，专注把 AI 真正用到澳洲华人的日常。" data-en="Robin, Michael, James, Jason and Sean — five Chinese-Australian AI practitioners focused on real-world AI applications.">Robin 联合 Michael、James、Jason、Sean，五位华人 AI 实践者，专注把 AI 真正用到澳洲华人的日常。</p>
+
+    <div class="team-grid">
+      <div class="team-card founder">
+        <img src="assets/team/robin_photo.jpg" alt="Robin" class="avatar">
+        <h3>Robin</h3>
+        <div class="role" data-zh="Founder · Lead Instructor" data-en="Founder · Lead Instructor">Founder · Lead Instructor</div>
+        <div class="bio" data-zh="蜗牛 AI 创始人 · KSI 悉尼土地投资 CEO · AI 应用系统实践者 · 澳洲华人 AI 应用传播者" data-en="Snail AI Founder · KSI Sydney Land Investment CEO · AI systems practitioner · Chinese-Australian AI evangelist">蜗牛 AI 创始人 · KSI 悉尼土地投资 CEO · AI 应用系统实践者 · 澳洲华人 AI 应用传播者</div>
+      </div>
+
+      <div class="team-card founder">
+        <img src="assets/team/michael_guo.jpg" alt="Michael Guo" class="avatar">
+        <h3>Michael Guo</h3>
+        <div class="role" data-zh="Co-Founder · Wealth Instructor" data-en="Co-Founder · Wealth Instructor">Co-Founder · Wealth Instructor</div>
+        <div class="bio" data-zh="讲师 · 澳大利亚悉尼 · KSI 悉尼土地投资 · SMSF 财富升级方案 · 澳洲投资专家" data-en="Instructor · Sydney Australia · KSI Sydney Land Investment · SMSF wealth strategies · Australian investment expert">讲师 · 澳大利亚悉尼 · KSI 悉尼土地投资 · SMSF 财富升级方案 · 澳洲投资专家</div>
+      </div>
+
+      <div class="team-card">
+        <img src="assets/team/qr_jiangpei.png" alt="James 蒋培 QR" class="qr">
+        <h3>James 蒋培</h3>
+        <div class="role" data-zh="Enterprise WeChat · AI Tools" data-en="Enterprise WeChat · AI Tools">Enterprise WeChat · AI Tools</div>
+        <div class="bio" data-zh="企业微信 · AI 工具支持 · 全程帮你解决 WorkBuddy 装不上、跑不动的问题" data-en="Enterprise WeChat · AI tools support · Helps you troubleshoot WorkBuddy installation and usage">企业微信 · AI 工具支持 · 全程帮你解决 WorkBuddy 装不上、跑不动的问题</div>
+      </div>
+
+      <div class="team-card">
+        <img src="assets/team/qr_xiejin.png" alt="Jason 谢锦 QR" class="qr">
+        <h3>Jason 谢锦</h3>
+        <div class="role" data-zh="Remote Support · Snail AI" data-en="Remote Support · Snail AI">Remote Support · Snail AI</div>
+        <div class="bio" data-zh="蜗牛 AI · 远程支持 · 课后作业批改、实战演练跟进" data-en="Snail AI · Remote support · Homework review and hands-on follow-up">蜗牛 AI · 远程支持 · 课后作业批改、实战演练跟进</div>
+      </div>
+
+      <div class="team-card">
+        <img src="assets/team/qr_wuqing.png" alt="Sean 吴清 QR" class="qr">
+        <h3>Sean 吴清</h3>
+        <div class="role" data-zh="Enterprise WeChat · Quota Q&A" data-en="Enterprise WeChat · Quota Q&A">Enterprise WeChat · Quota Q&A</div>
+        <div class="bio" data-zh="企业微信 · 算力答疑 · 帮你选最划算的腾讯 AI 算力方案" data-en="Enterprise WeChat · Token quota Q&A · Helps you choose the most cost-effective Tencent AI plan">企业微信 · 算力答疑 · 帮你选最划算的腾讯 AI 算力方案</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services-section">
+  <div class="section-inner">
+    <div class="section-tag" data-zh="Services" data-en="Services">Services</div>
+    <h2 class="section-title" data-zh="我们提供的服务" data-en="What We Offer">我们提供的服务</h2>
+    <p class="section-desc" data-zh="从入门到精通，从线上到线下，从学习到投资 — 蜗牛 AI 全程陪你。" data-en="From beginner to expert, online to in-person, learning to investing — Snail AI is with you all the way.">从入门到精通，从线上到线下，从学习到投资 — 蜗牛 AI 全程陪你。</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3 data-zh="线上课 · 24 课时" data-en="Online Course · 24 Lessons">线上课 · 24 课时</h3>
+        <p data-zh="3 个月系统学习，从 WorkBuddy 安装到 AI 视频/音乐创作，覆盖工作、学习、生活、投资全场景。" data-en="3 months systematic learning, from WorkBuddy setup to AI video/music creation, covering work, study, life, and investment scenarios.">3 个月系统学习，从 WorkBuddy 安装到 AI 视频/音乐创作，覆盖工作、学习、生活、投资全场景。</p>
+        <span class="price" data-zh="AUD $599 / 3 个月" data-en="AUD $599 / 3 months">AUD $599 / 3 个月</span>
+        <a href="/" target="_blank" class="link" data-zh="查看课程大纲 →" data-en="View Syllabus →">查看课程大纲 →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3 data-zh="线下课 · 深度实操" data-en="In-Person · Deep Hands-On">线下课 · 深度实操</h3>
+        <p data-zh="悉尼线下小班教学，带着电脑和真实问题来现场，一起拆解、一起做。" data-en="Sydney in-person small class. Bring your laptop and real problems, let's solve them together.">悉尼线下小班教学，带着电脑和真实问题来现场，一起拆解、一起做。</p>
+        <span class="price" data-zh="AUD $999 / 2 天" data-en="AUD $999 / 2 days">AUD $999 / 2 天</span>
+        <a href="/" target="_blank" class="link" data-zh="查看线下班 →" data-en="View In-Person →">查看线下班 →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <h3 data-zh="AI 财富管理课" data-en="AI Wealth Management">AI 财富管理课</h3>
+        <p data-zh="Michael 亲授，KSI 悉尼土地投资 + SMSF + Bradfield 西悉尼国际机场机遇。" data-en="Taught by Michael — KSI Sydney land investment + SMSF + Bradfield Western Sydney Airport opportunities.">Michael 亲授，KSI 悉尼土地投资 + SMSF + Bradfield 西悉尼国际机场机遇。</p>
+        <span class="price" data-zh="AUD $1,999 / 高级" data-en="AUD $1,999 / Advanced">AUD $1,999 / 高级</span>
+        <a href="/" target="_blank" class="link" data-zh="查看财富课 →" data-en="View Wealth →">查看财富课 →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3 data-zh="企业微信社群" data-en="WeCom Community">企业微信社群</h3>
+        <p data-zh="免费加入蜗牛 AI 学习社群 — 课前通知、作业批改、同学互助，全程陪跑。" data-en="Free to join — pre-class notifications, homework review, peer support throughout.">免费加入蜗牛 AI 学习社群 — 课前通知、作业批改、同学互助，全程陪跑。</p>
+        <span class="price" data-zh="FREE" data-en="FREE">FREE</span>
+        <a href="#channels" class="link" data-zh="扫码加入 →" data-en="Scan to Join →">扫码加入 →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3 data-zh="免费公开视频" data-en="Free Public Videos">免费公开视频</h3>
+        <p data-zh="YouTube / 视频号 / 公众号持续更新，路演、直播、答疑、干货应有尽有。" data-en="YouTube / Video Channel / WeChat Official Account — roadshow, livestream, Q&A, tutorials.">YouTube / 视频号 / 公众号持续更新，路演、直播、答疑、干货应有尽有。</p>
+        <span class="price" data-zh="FREE" data-en="FREE">FREE</span>
+        <a href="#videos" class="link" data-zh="观看视频 →" data-en="Watch Now →">观看视频 →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3 data-zh="1 对 1 咨询" data-en="1-on-1 Consultation">1 对 1 咨询</h3>
+        <p data-zh="针对企业主 / 高净值客户的 AI 落地咨询，含业务流程改造、AI 工具选型、团队培训。" data-en="For business owners / HNW clients — AI implementation, tool selection, team training.">针对企业主 / 高净值客户的 AI 落地咨询，含业务流程改造、AI 工具选型、团队培训。</p>
+        <span class="price" data-zh="AUD $299 / 小时" data-en="AUD $299 / hour">AUD $299 / 小时</span>
+        <a href="mailto:hello@snailai.au" class="link" data-zh="预约咨询 →" data-en="Book Now →">预约咨询 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIDEOS ===== -->
+<section id="videos">
+  <div class="section-inner">
+    <div class="section-tag" data-zh="Videos" data-en="Videos">Videos</div>
+    <h2 class="section-title" data-zh="之前各种视频 / 直播" data-en="Past Videos & Livestreams">之前各种视频 / 直播</h2>
+    <p class="section-desc" data-zh="从 6/20 路演首场到 7/4 财富直播，所有内容都已上 YouTube 和视频号。" data-en="From the 6/20 first roadshow to the 7/4 wealth livestream — everything on YouTube and Video Channel.">从 6/20 路演首场到 7/4 财富直播，所有内容都已上 YouTube 和视频号。</p>
+
+    <div class="videos-grid">
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/DUJSgMQ-4BI" title="蜗牛 AI 6月20日首次路演" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3 data-zh="蜗牛 AI 首次路演 · 6/20" data-en="Snail AI First Roadshow · 6/20">蜗牛 AI 首次路演 · 6/20</h3>
+          <p data-zh="在悉尼的首次华人 AI 应用私享会，Robin 介绍蜗牛 AI 团队和课程。" data-en="First Chinese-Australian AI community gathering in Sydney. Robin introduces the team and courses.">在悉尼的首次华人 AI 应用私享会，Robin 介绍蜗牛 AI 团队和课程。</p>
+          <span class="meta">YOUTUBE · ROADSHOW</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/qIZp8pTQA3M" title="Robin 财富直播 7/4" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3 data-zh="Robin 财富直播 · 7/4" data-en="Robin Wealth Livestream · 7/4">Robin 财富直播 · 7/4</h3>
+          <p data-zh="Michael 深度分享 KSI 悉尼土地投资 + Bradfield 西悉尼国际机场 + SMSF 财富升级。" data-en="Michael's deep dive on KSI Sydney land investment + Bradfield Western Sydney Airport + SMSF wealth.">Michael 深度分享 KSI 悉尼土地投资 + Bradfield 西悉尼国际机场 + SMSF 财富升级。</p>
+          <span class="meta">YOUTUBE · LIVESTREAM</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/NZag6CZ0PHA" title="什么是 AI 刚需" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3 data-zh="什么是 AI 刚需？ · 6 个挖掘维度" data-en="What is an AI Need? · 6 Dimensions">什么是 AI 刚需？ · 6 个挖掘维度</h3>
+          <p data-zh="深度讲解 AI 刚需的定义，提供 6 个挖掘维度，帮你系统性地找到自己的真实需求。" data-en="Deep dive on AI needs and 6 discovery dimensions to systematically identify your real needs.">深度讲解 AI 刚需的定义，提供 6 个挖掘维度，帮你系统性地找到自己的真实需求。</p>
+          <span class="meta">YOUTUBE · TUTORIAL</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/videoseries?list=PLrAXtmRdnEQy6nuLMfO9tV4rnQ5w8e6yA" title="蜗牛 AI 官方播放列表" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3 data-zh="蜗牛 AI 官方播放列表" data-en="Snail AI Official Playlist">蜗牛 AI 官方播放列表</h3>
+          <p data-zh="所有路演、直播、答疑、卡拉 OK、干货视频都在这里。" data-en="All roadshow, livestream, Q&A, karaoke, and tutorial videos in one place.">所有路演、直播、答疑、卡拉 OK、干货视频都在这里。</p>
+          <span class="meta">YOUTUBE · PLAYLIST</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHANNELS ===== -->
+<section id="channels" class="channels-section">
+  <div class="section-inner">
+    <div class="section-tag" data-zh="Follow Us" data-en="Follow Us">Follow Us</div>
+    <h2 class="section-title" data-zh="关注蜗牛 AI" data-en="Follow Snail AI">关注蜗牛 AI</h2>
+    <p class="section-desc" data-zh="三个渠道同时更新，路演 / 直播 / 答疑 / 卡拉 OK / 干货，应有尽有。" data-en="Three channels, all updated regularly — roadshow, livestream, Q&A, karaoke, tutorials.">三个渠道同时更新，路演 / 直播 / 答疑 / 卡拉 OK / 干货，应有尽有。</p>
+
+    <div class="channels-grid">
+      <div class="channel-card">
+        <img src="assets/posters/蜗牛 AI 公众号二维码.jpg" alt="蜗牛 AI 公众号" class="qr">
+        <h3 data-zh="公众号" data-en="WeChat Official">公众号</h3>
+        <p data-zh="蜗牛 AI 在澳洲" data-en="Snail AI 在澳洲">蜗牛 AI 在澳洲</p>
+      </div>
+
+      <div class="channel-card">
+        <img src="assets/posters/snailai_video_channel.jpg" alt="蜗牛 AI 视频号" class="qr">
+        <h3 data-zh="视频号" data-en="Video Channel">视频号</h3>
+        <p data-zh="蜗牛 AI-AU" data-en="Snail AI-AU">蜗牛 AI-AU</p>
+      </div>
+
+      <div class="channel-card">
+        <div style="width:160px;height:160px;border-radius:10px;background:linear-gradient(135deg,#FF0000,#CC0000);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;color:white;font-size:3rem">▶</div>
+        <h3>YouTube</h3>
+        <p data-zh="YouTube 频道 · 完整路演与直播" data-en="YouTube Channel · full roadshow & livestream">YouTube 频道 · 完整路演与直播</p>
+        <a href="https://www.youtube.com/watch?v=DUJSgMQ-4BI" target="_blank" style="display:inline-block;margin-top:12px;color:var(--accent);font-weight:700;font-size:0.86rem;text-decoration:none" data-zh="立即访问 →" data-en="Visit →">立即访问 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ENTRY ===== -->
+<section>
+  <div class="section-inner">
+    <div class="faq-entry">
+      <h2 data-zh="❓ 常见问题" data-en="❓ Frequently Asked Questions">❓ 常见问题</h2>
+      <p data-zh="电脑配置、课程内容、退款政策、讲师资质、12 个你最关心的问题。" data-en="Computer specs, course content, refund policy, instructor credentials — 12 most-asked questions.">电脑配置、课程内容、退款政策、讲师资质、12 个你最关心的问题。</p>
+      <a href="/faq/mobile" class="btn btn-primary" data-zh="查看 FAQ →" data-en="View FAQ →">查看 FAQ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <img src="assets/snailai_logo.png" alt="蜗牛 AI Logo" class="brand-logo">
+  <p data-zh="© 2026 蜗牛 AI · 澳洲华人 AI 应用私享会 · 学习 · 应用 · 享受 · 投资" data-en="© 2026 Snail AI · Australian Chinese AI Community · Learn · Apply · Enjoy · Invest">© 2026 蜗牛 AI · 澳洲华人 AI 应用私享会 · 学习 · 应用 · 享受 · 投资</p>
+  <div class="links">
+    <a href="#team" data-zh="团队" data-en="Team">团队</a>
+    <a href="#services" data-zh="服务" data-en="Services">服务</a>
+    <a href="#videos" data-zh="视频" data-en="Videos">视频</a>
+    <a href="/faq/mobile" data-zh="FAQ" data-en="FAQ">FAQ</a>
+    <a href="https://www.youtube.com/watch?v=DUJSgMQ-4BI" target="_blank" data-zh="YouTube" data-en="YouTube">YouTube</a>
+  </div>
+  <div class="version" id="version-tag">V1.0.0 · 2026-07-05 · SnailAI Website</div>
+</footer>
+
+<script>
+  // ===== Language switcher =====
+  const LANG_KEY = 'snailai-lang';
+  function applyLang(lang) {
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-zh');
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+  // Init
+  let savedLang = 'zh';
+  try { savedLang = localStorage.getItem(LANG_KEY) || 'zh'; } catch(e) {}
+  applyLang(savedLang);
+
+  // ===== Version tag (read from version.json) =====
+  fetch('version.json').then(r => r.json()).then(d => {
+    const el = document.getElementById('version-tag');
+    if (el && d) {
+      el.textContent = `V${d.version} · ${d.release_date} · SnailAI Website`;
+    }
+  }).catch(() => {});
+</script>
+
+</body>
+</html>

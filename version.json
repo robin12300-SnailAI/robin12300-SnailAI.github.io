@@ -1,0 +1,33 @@
+{
+  "name": "SnailAI Official Website",
+  "version": "1.0.0",
+  "release_date": "2026-07-05",
+  "last_updated": "2026-07-05",
+  "domain": "https://robin12300-snailai.github.io/",
+  "deploy_target": "GitHub Pages",
+  "owner": {
+    "name": "Robin Luo",
+    "github": "https://github.com/robin12300-SnailAI"
+  },
+  "team": [
+    { "name": "Robin", "role": "Founder & Lead Instructor" },
+    { "name": "Michael Guo", "role": "Co-Founder & KSI Investment" },
+    { "name": "James 蒋培", "role": "AI Tool Support" },
+    { "name": "Jason 谢锦", "role": "Community Support" },
+    { "name": "Sean 吴清", "role": "AI Compute Specialist" }
+  ],
+  "channels": {
+    "wechat_official_account": "蜗牛 AI 在澳洲",
+    "wechat_video_account": "蜗牛 AI-AU",
+    "youtube": "https://www.youtube.com/@snailai-au"
+  },
+  "structure": {
+    "home": "/",
+    "faq": "/faq/",
+    "online_course": "/online-course/",
+    "offline_course": "/offline-course/"
+  },
+  "changelog": [
+    "1.0.0 (2026-07-05): Initial release on GitHub Pages — home, FAQ, online course, offline course, assets"
+  ]
+}

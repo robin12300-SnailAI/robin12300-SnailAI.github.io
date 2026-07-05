@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ 常见问题 | 蜗牛 AI 澳洲华人应用首期培训班</title>
+<meta name="description" content="蜗牛 AI 课程 FAQ：电脑配置、课程内容、退款政策、讲师资质、12 个你最关心的问题。">
+<link rel="icon" type="image/png" href="../assets/snailai_logo.png">
+<style>
+  :root {
+    --ink: #1A1A2E;
+    --ink-2: #2A2A40;
+    --ink-3: #6A6A85;
+    --paper: #FCFCFA;
+    --paper-2: #F5F4EE;
+    --accent: #FF5B1F;
+    --accent-2: #E84A0F;
+    --accent-light: rgba(255,91,31,0.08);
+    --accent-warm: #FFF5EE;
+    --line: rgba(26,26,46,0.08);
+    --shadow-sm: 0 1px 3px rgba(26,26,46,0.04), 0 2px 8px rgba(26,26,46,0.04);
+    --shadow-md: 0 4px 16px rgba(26,26,46,0.08);
+    --r-sm: 6px; --r-md: 10px; --r-lg: 16px;
+    --sans: 'Inter','Helvetica Neue','Helvetica','Arial','PingFang SC','Microsoft YaHei UI','Noto Sans SC',sans-serif;
+    --mono: 'JetBrains Mono','SF Mono','Menlo','Consolas',monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 16px 40px; background: linear-gradient(180deg, rgba(252,252,250,.96) 0%, rgba(252,252,250,.85) 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .nav-logo img { height: 32px; width: auto; }
+  .nav-logo span { font-weight: 800; font-size: 15px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 13px; font-weight: 600; color: var(--ink-3); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active { color: var(--accent); }
+  .lang-switch { display: inline-flex; gap: 4px; border: 1px solid var(--line); border-radius: 100px; padding: 3px; background: white; }
+  .lang-btn { background: none; border: none; cursor: pointer; padding: 5px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; color: var(--ink-3); transition: all .2s; }
+  .lang-btn.active { background: var(--ink); color: white; }
+
+  .hero { padding: 120px 40px 40px; max-width: 960px; margin: 0 auto; text-align: center; }
+  .hero-tag { display: inline-block; padding: 5px 14px; background: var(--accent-light); border: 1px solid rgba(255,91,31,0.18); color: var(--accent); border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 16px; }
+  .hero .lead { font-size: 1.1rem; color: var(--ink-3); max-width: 640px; margin: 0 auto; }
+
+  .toc-wrap { max-width: 960px; margin: 0 auto 40px; padding: 0 40px; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; padding: 20px 24px; background: white; border: 1px solid var(--line); border-radius: var(--r-lg); }
+  .toc a { font-size: 12.5px; font-weight: 600; color: var(--ink-3); text-decoration: none; padding: 6px 12px; border-radius: 100px; background: var(--paper-2); transition: all .2s; }
+  .toc a:hover { background: var(--accent); color: white; }
+
+  .faq-list { max-width: 960px; margin: 0 auto; padding: 0 40px 80px; }
+  .faq-item { background: white; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px 28px; margin-bottom: 16px; transition: all .3s ease; scroll-margin-top: 100px; }
+  .faq-item:hover { box-shadow: var(--shadow-md); border-color: rgba(255,91,31,0.2); }
+  .faq-q { display: flex; gap: 14px; align-items: center; margin-bottom: 12px; }
+  .faq-num { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--accent); min-width: 32px; height: 32px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .faq-q-text { font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.4; }
+  .faq-a p { font-size: 0.95rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 10px; }
+  .faq-a p:last-child { margin-bottom: 0; }
+  .faq-a strong { color: var(--ink); font-weight: 700; }
+  .faq-a em { color: var(--accent); font-style: normal; font-weight: 700; }
+  .level-card { display: grid; gap: 14px; margin: 14px 0; padding: 18px; background: var(--accent-warm); border-radius: var(--r-md); }
+  .level-card > div { padding-left: 14px; border-left: 3px solid var(--accent); }
+
+  .footer { background: var(--paper-2); border-top: 1px solid var(--line); padding: 36px 40px; text-align: center; }
+  .footer .brand-logo { height: 32px; margin-bottom: 10px; }
+  .footer p { font-size: 0.78rem; color: var(--ink-3); }
+  .footer .links { margin-top: 10px; display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+  .footer .links a { color: var(--ink-3); text-decoration: none; font-size: 0.78rem; }
+  .footer .version { margin-top: 14px; font-family: var(--mono); font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.08em; }
+
+  @media (max-width: 700px) {
+    .nav { padding: 12px 18px; }
+    .nav-links a:not(.btn) { display: none; }
+    .hero { padding: 100px 20px 30px; }
+    .toc-wrap, .faq-list { padding-left: 20px; padding-right: 20px; }
+    .faq-item { padding: 18px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="../assets/snailai_logo.png" alt="蜗牛 AI Logo">
+    <span data-zh="蜗牛 AI" data-en="Snail AI">蜗牛 AI</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#team" data-zh="团队" data-en="Team">团队</a>
+    <a href="index.html#services" data-zh="服务" data-en="Services">服务</a>
+    <a href="index.html#videos" data-zh="视频" data-en="Videos">视频</a>
+    <a href="/faq/" class="active" data-zh="FAQ" data-en="FAQ">FAQ</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag" data-zh="FAQ · 12 QUESTIONS" data-en="FAQ · 12 QUESTIONS">FAQ · 12 QUESTIONS</div>
+  <h1 data-zh="常见问题" data-en="Frequently Asked Questions">常见问题</h1>
+  <p class="lead" data-zh="电脑配置、课程内容、退款政策、讲师资质 — 12 个你最关心的问题" data-en="Computer specs, course content, refund policy, instructor credentials — 12 most-asked questions">电脑配置、课程内容、退款政策、讲师资质 — 12 个你最关心的问题</p>
+</section>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <a href="#q1" data-zh="01 课程学什么" data-en="01 What">01 课程学什么</a>
+    <a href="#q2" data-zh="02 适合谁" data-en="02 Who">02 适合谁</a>
+    <a href="#q3" data-zh="03 学费" data-en="03 Price">03 学费</a>
+    <a href="#q4" data-zh="04 上课时间" data-en="04 Time">04 上课时间</a>
+    <a href="#q5" data-zh="05 直播 vs 现场" data-en="05 Online vs Offline">05 直播 vs 现场</a>
+    <a href="#q6" data-zh="06 课程难度" data-en="06 Difficulty">06 课程难度</a>
+    <a href="#q7" data-zh="07 学完能用" data-en="07 After">07 学完能用</a>
+    <a href="#q8" data-zh="08 AI 替换" data-en="08 AI Replace">08 AI 替换</a>
+    <a href="#q9" data-zh="09 课程作业" data-en="09 Homework">09 课程作业</a>
+    <a href="#q10" data-zh="10 和免费内容" data-en="10 vs Free">10 和免费内容</a>
+    <a href="#q11" data-zh="11 怕学不会" data-en="11 Confidence">11 怕学不会</a>
+    <a href="#q12" data-zh="12 电脑旧" data-en="12 Old PC">12 电脑旧</a>
+  </div>
+</div>
+
+<main class="faq-list">
+
+  <article class="faq-item" id="q1">
+    <div class="faq-q"><div class="faq-num">01</div><div class="faq-q-text" data-zh="这门课到底教什么？我会学到哪些东西？" data-en="What will I actually learn in this course?">这门课到底教什么？我会学到哪些东西？</div></div>
+    <div class="faq-a">
+      <p data-zh="蜗牛 AI 课程围绕 <em>澳洲华人真实生活场景</em> 设计，不讲泛泛的 AI 概念，而是带你把 AI 真正用进：工作（写邮件、整理资料、做合同审核）、学习（论文检索、NotebookLM 整理笔记）、生活（旅行规划、健康管理、家庭记账）、投资（房产数据查询、报税、银行对账）。" data-en="Snail AI focuses on <em>real Chinese-Australian scenarios</em> — not abstract AI concepts, but actually using AI in: work (emails, documents, contracts), study (paper research, NotebookLM), life (travel, health, family finance), investment (property data, tax, bank reconciliation).">蜗牛 AI 课程围绕 <em>澳洲华人真实生活场景</em> 设计，不讲泛泛的 AI 概念，而是带你把 AI 真正用进：工作（写邮件、整理资料、做合同审核）、学习（论文检索、NotebookLM 整理笔记）、生活（旅行规划、健康管理、家庭记账）、投资（房产数据查询、报税、银行对账）。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q2">
+    <div class="faq-q"><div class="faq-num">02</div><div class="faq-q-text" data-zh="我完全没有 AI 基础，适合上这门课吗？" data-en="I have no AI background. Is this course for me?">我完全没有 AI 基础，适合上这门课吗？</div></div>
+    <div class="faq-a">
+      <p data-zh="非常适合。课程设计就是 <em>零基础友好</em>。从 WorkBuddy 的安装开始，一步步带你：第一次对话、安装技能、调用专家、连接邮箱和日历，最后到用 AI 写真实邮件、整理资料。" data-en="Absolutely. The course is designed to be <em>beginner-friendly</em>. We start from WorkBuddy installation and walk you through: first chat, install skills, call experts, connect email and calendar, then to writing real emails and organizing documents with AI.">非常适合。课程设计就是 <em>零基础友好</em>。从 WorkBuddy 的安装开始，一步步带你：第一次对话、安装技能、调用专家、连接邮箱和日历，最后到用 AI 写真实邮件、整理资料。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q3">
+    <div class="faq-q"><div class="faq-num">03</div><div class="faq-q-text" data-zh="学费多少？有没有分期或早鸟价？" data-en="How much is the tuition? Any payment plans or early bird?">学费多少？有没有分期或早鸟价？</div></div>
+    <div class="faq-a">
+      <p data-zh="线上课 <em>AUD $599 / 3 个月</em>，线下课 <em>AUD $999 / 2 天</em>，AI 财富管理课 <em>AUD $1,999 / 高级</em>。" data-en="Online <em>AUD $599 / 3 months</em>, In-Person <em>AUD $999 / 2 days</em>, AI Wealth <em>AUD $1,999 / Advanced</em>.">线上课 <em>AUD $599 / 3 个月</em>，线下课 <em>AUD $999 / 2 天</em>，AI 财富管理课 <em>AUD $1,999 / 高级</em>。</p>
+      <p data-zh="第一期有早鸟价和群内老学员优惠，详情请加企业微信或公众号咨询。" data-en="First cohort has early-bird and alumni discounts. Contact via WeChat Official Account for details.">第一期有早鸟价和群内老学员优惠，详情请加企业微信或公众号咨询。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q4">
+    <div class="faq-q"><div class="faq-num">04</div><div class="faq-q-text" data-zh="上课时间是几点？需要每周都到吗？" data-en="When are classes? Do I need to attend every week?">上课时间是几点？需要每周都到吗？</div></div>
+    <div class="faq-a">
+      <p data-zh="线上课每周一次直播（周三晚上 8:30 - 10:30），线下课周末班（周六 1:00 - 4:00）。错过直播可以看回放，但要尽量跟进度。" data-en="Online sessions are once per week (Wed evening 8:30-10:30). In-person classes are on weekends (Sat 1:00-4:00). You can watch replays if you miss a session, but try to keep up.">线上课每周一次直播（周三晚上 8:30 - 10:30），线下课周末班（周六 1:00 - 4:00）。错过直播可以看回放，但要尽量跟进度。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q5">
+    <div class="faq-q"><div class="faq-num">05</div><div class="faq-q-text" data-zh="线上直播和线下现场哪个效果更好？" data-en="Is the online livestream or in-person class better?">线上直播和线下现场哪个效果更好？</div></div>
+    <div class="faq-a">
+      <p data-zh="两者侧重不同：<em>线上直播</em> 适合想系统学习、时间灵活、或不方便到现场的同学；<em>线下现场</em> 更像"现场共创"，可以带着电脑和真实问题来现场，我们一起拆解、一起做。" data-en="They serve different needs: <em>online livestream</em> suits those who want systematic learning, flexible time, or can't attend in person. <em>In-person</em> is more like "co-creation" — bring your laptop and real problems, let's solve them together.">两者侧重不同：<em>线上直播</em> 适合想系统学习、时间灵活、或不方便到现场的同学；<em>线下现场</em> 更像"现场共创"，可以带着电脑和真实问题来现场，我们一起拆解、一起做。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q6">
+    <div class="faq-q"><div class="faq-num">06</div><div class="faq-q-text" data-zh="我已经会一点 ChatGPT 了，会不会太简单？" data-en="I already use ChatGPT a bit. Will it be too easy?">我已经会一点 ChatGPT 了，会不会太简单？</div></div>
+    <div class="faq-a">
+      <p data-zh="不会。课程前半段帮你打基础，后半段会讲 <em>多模型协作、AI 视频/音乐创作、自动化工作流、企业微信智能表格、澳洲报税与投资</em>。会 ChatGPT 的人，更能跟上后半段的高阶内容。" data-en="No. The first half builds the foundation, the second half covers <em>multi-model collaboration, AI video/music creation, automation workflows, WeCom smart tables, Australian tax & investment</em>. If you already know ChatGPT, you'll get even more from the advanced second half.">不会。课程前半段帮你打基础，后半段会讲 <em>多模型协作、AI 视频/音乐创作、自动化工作流、企业微信智能表格、澳洲报税与投资</em>。会 ChatGPT 的人，更能跟上后半段的高阶内容。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q7">
+    <div class="faq-q"><div class="faq-num">07</div><div class="faq-q-text" data-zh="学完以后，我具体能用 AI 做什么？" data-en="After completing the course, what can I actually do with AI?">学完以后，我具体能用 AI 做什么？</div></div>
+    <div class="faq-a">
+      <p data-zh="学完你可以：① 一键生成专业邮件 / 文档 ② 自动整理 PDF 合同、提取关键条款 ③ 用 AI 做家庭旅行 / 投资计划 ④ 制作 AI 视频、AI 音乐 ⑤ 用企业微信智能表格管理任务和客户 ⑥ 自己用 AI 完成澳洲报税和银行对账。" data-en="After the course, you can: ① One-click generate professional emails/documents ② Auto-organize PDF contracts ③ Use AI for family travel/investment planning ④ Create AI videos and music ⑤ Use WeCom smart tables to manage tasks and customers ⑥ Complete Australian tax filing and bank reconciliation with AI.">学完你可以：① 一键生成专业邮件 / 文档 ② 自动整理 PDF 合同、提取关键条款 ③ 用 AI 做家庭旅行 / 投资计划 ④ 制作 AI 视频、AI 音乐 ⑤ 用企业微信智能表格管理任务和客户 ⑥ 自己用 AI 完成澳洲报税和银行对账。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q8">
+    <div class="faq-q"><div class="faq-num">08</div><div class="faq-q-text" data-zh="AI 会不会让我失业？" data-en="Will AI make me unemployed?">AI 会不会让我失业？</div></div>
+    <div class="faq-a">
+      <p data-zh="这是一半的真相。<em>完整答案是</em>：打败你的不是 AI，是会使用 AI 的人。AI 不是你的对手，而是你的机甲 — 就像变形金刚穿上了机甲就会变得超级强大。" data-en="That's half the truth. The <em>full answer is</em>: AI won't replace you, a person using AI will. AI is not your opponent, it's your mecha — like Transformers become powerful when they put on their armor.">这是一半的真相。<em>完整答案是</em>：打败你的不是 AI，是会使用 AI 的人。AI 不是你的对手，而是你的机甲 — 就像变形金刚穿上了机甲就会变得超级强大。</p>
+      <p data-zh="整个 AI 时代，<em>不投入学习 AI 才是最大的风险</em>。你要做的不是怕 AI，而是学会用 AI。" data-en="In the AI era, <em>not investing in learning AI is the biggest risk</em>. Your job is not to fear AI, but to learn to use it.">整个 AI 时代，<em>不投入学习 AI 才是最大的风险</em>。你要做的不是怕 AI，而是学会用 AI。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q9">
+    <div class="faq-q"><div class="faq-num">09</div><div class="faq-q-text" data-zh="课程有没有作业？会不会压力很大？" data-en="Is there homework? Will it be too stressful?">课程有没有作业？会不会压力很大？</div></div>
+    <div class="faq-a">
+      <p data-zh="会有作业，但不是学校式复杂作业，而是 <em>"真实应用任务"</em>。比如：用 AI 写一封真实邮件、用 AI 整理一份资料、用 AI 做家庭旅行计划、用 AI 设计客户跟进话术。" data-en="There are assignments, but they're <em>"real-world tasks"</em>, not school homework. For example: write a real email with AI, organize a document with AI, plan a family trip with AI, draft customer follow-up scripts with AI.">会有作业，但不是学校式复杂作业，而是 <em>"真实应用任务"</em>。比如：用 AI 写一封真实邮件、用 AI 整理一份资料、用 AI 做家庭旅行计划、用 AI 设计客户跟进话术。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q10">
+    <div class="faq-q"><div class="faq-num">10</div><div class="faq-q-text" data-zh="这门课和网上免费的 AI 视频有什么区别？" data-en="How is this different from free AI videos online?">这门课和网上免费的 AI 视频有什么区别？</div></div>
+    <div class="faq-a">
+      <p data-zh="网上免费内容很多，但大多是 <em>碎片化</em> 的。你看完可能觉得很厉害，但回到自己的生活和工作里，还是不知道怎么用。" data-en="There's a lot of free content online, but most is <em>fragmented</em>. You might feel impressed after watching, but when you get back to your life and work, you still don't know how to use it.">网上免费内容很多，但大多是 <em>碎片化</em> 的。你看完可能觉得很厉害，但回到自己的生活和工作里，还是不知道怎么用。</p>
+      <p data-zh="这门课的不同在于：<em>一、3 个月的系统学习</em>；<em>二、围绕澳洲华人的真实场景</em>，不是泛泛讲工具；<em>三、有作业、有助教、有社群</em>，帮你真正落地。" data-en="This course is different because: <em>1. 3-month systematic learning</em>; <em>2. Real Chinese-Australian scenarios</em>, not abstract tool tutorials; <em>3. Homework, TAs, and community</em> to help you actually apply it.">这门课的不同在于：<em>一、3 个月的系统学习</em>；<em>二、围绕澳洲华人的真实场景</em>，不是泛泛讲工具；<em>三、有作业、有助教、有社群</em>，帮你真正落地。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q11">
+    <div class="faq-q"><div class="faq-num">11</div><div class="faq-q-text" data-zh="我相信 AI 很厉害，但我不相信自己能学会——怎么办？" data-en="I believe in AI but not in myself — what should I do?">我相信 AI 很厉害，但我不相信自己能学会——怎么办？</div></div>
+    <div class="faq-a">
+      <p data-zh="这个问题很真实，也很关键。它其实分两层：" data-en="This is a real and important question. It has two layers:">这个问题很真实，也很关键。它其实分两层：</p>
+      <div class="level-card">
+        <div>
+          <strong data-zh="第一层：相信 AI 能做到" data-en="Layer 1: Trust that AI can do it">第一层：相信 AI 能做到</strong>
+          <p style="font-size:.92em;color:var(--ink-3);margin-top:4px;" data-zh="只要看过我的直播或路演，你就会相信——AI 确实能做到。" data-en="Once you've watched our livestream or roadshow, you'll see AI really can do it.">只要看过我的直播或路演，你就会相信——AI 确实能做到。</p>
+        </div>
+        <div>
+          <strong data-zh="第二层：相信你能利用 AI 做到" data-en="Layer 2: Trust that you can do it with AI">第二层：相信你能利用 AI 做到</strong>
+          <p style="font-size:.92em;color:var(--ink-3);margin-top:4px;" data-zh="这才是真正的门槛。很多人不是不信 AI，而是不信自己。觉得"我年纪大了""我电脑不行"。" data-en="This is the real threshold. Many people don't doubt AI; they doubt themselves — "I'm too old", "my computer is bad".">这才是真正的门槛。很多人不是不信 AI，而是不信自己。觉得"我年纪大了""我电脑不行"。</p>
+        </div>
+      </div>
+      <p data-zh="看直播，解决第一层——<em>相信 AI</em>。上课练习，解决第二层——<em>相信你自己</em>。" data-en="Livestream solves Layer 1 — <em>trust AI</em>. Class practice solves Layer 2 — <em>trust yourself</em>.">看直播，解决第一层——<em>相信 AI</em>。上课练习，解决第二层——<em>相信你自己</em>。</p>
+    </div>
+  </article>
+
+  <article class="faq-item" id="q12">
+    <div class="faq-q"><div class="faq-num">12</div><div class="faq-q-text" data-zh="我的电脑很旧，是不是需要换电脑？" data-en="My computer is old. Do I need a new one?">我的电脑很旧，是不是需要换电脑？</div></div>
+    <div class="faq-a">
+      <p data-zh="不用急着换。现在腾讯龙虾（WorkBuddy）要求的安装配置并不高，普通的笔记本电脑基本都能跑起来。" data-en="No rush to upgrade. Tencent's WorkBuddy doesn't require high-end hardware — most laptops can run it.">不用急着换。现在腾讯龙虾（WorkBuddy）要求的安装配置并不高，普通的笔记本电脑基本都能跑起来。</p>
+      <p data-zh="建议的做法：上课之后，由我们的助教先给你的电脑安装龙虾，根据实际运行情况得出配置结论，再决定要不要买新电脑。" data-en="Our recommendation: after class starts, let our TA install WorkBuddy on your computer first. Based on actual performance, then decide whether to buy new hardware.">建议的做法：上课之后，由我们的助教先给你的电脑安装龙虾，根据实际运行情况得出配置结论，再决定要不要买新电脑。</p>
+      <p data-zh="大多数情况下是不用买的。" data-en="In most cases, you don't need to buy.">大多数情况下是不用买的。</p>
+      <div class="level-card">
+        <div>
+          <strong data-zh="一、蜗牛 AI 的学习理念：尽量全免费" data-en="1. Snail AI philosophy: keep it free">一、蜗牛 AI 的学习理念：尽量全免费</strong>
+          <p style="font-size:.92em;color:var(--ink-3);margin-top:4px;" data-zh="我们做 AI 学习，核心原则是「尽量不投入」。课程学费之外，额外支出越小越好。" data-en="Our core principle: minimize spending. Beyond tuition, the less extra you spend, the better.">我们做 AI 学习，核心原则是「尽量不投入」。课程学费之外，额外支出越小越好。</p>
+        </div>
+        <div>
+          <strong data-zh="二、唯一必要的额外支出：腾讯 AI 算力" data-en="2. The only required expense: Tencent AI quota">二、唯一必要的额外支出：腾讯 AI 算力</strong>
+          <p style="font-size:.92em;color:var(--ink-3);margin-top:4px;" data-zh="整个学习过程中，我们可能会购买腾讯 AI 的算力（Token Plan），大约几百人民币左右。" data-en="During the course, you may purchase Tencent AI quota (Token Plan), around a few hundred RMB.">整个学习过程中，我们可能会购买腾讯 AI 的算力（Token Plan），大约几百人民币左右。</p>
+        </div>
+        <div>
+          <strong data-zh="三、其他支出：能省就省" data-en="3. Everything else: save where you can">三、其他支出：能省就省</strong>
+          <p style="font-size:.92em;color:var(--ink-3);margin-top:4px;" data-zh="除了上面的算力之外，其他的（电脑、设备、付费工具等）最好都不要再花钱了。" data-en="Other than the AI quota, please don't spend more (no new computer, devices, or paid tools).">除了上面的算力之外，其他的（电脑、设备、付费工具等）最好都不要再花钱了。</p>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:.95em;color:var(--ink-2);" data-zh="💡 总结：<strong>电脑先用着，配置让助教帮你测；算力买一点点，其他能省则省。</strong>" data-en="💡 Summary: <strong>Use what you have, let TAs test your setup; buy a small amount of AI quota; save everywhere else.</strong>">💡 总结：<strong>电脑先用着，配置让助教帮你测；算力买一点点，其他能省则省。</strong></p>
+    </div>
+  </article>
+
+</main>
+
+<footer class="footer">
+  <img src="../assets/snailai_logo.png" alt="蜗牛 AI Logo" class="brand-logo">
+  <p data-zh="© 2026 蜗牛 AI · 澳洲华人 AI 应用私享会" data-en="© 2026 Snail AI · Australian Chinese AI Community">© 2026 蜗牛 AI · 澳洲华人 AI 应用私享会</p>
+  <div class="links">
+    <a href="/" data-zh="← 返回首页" data-en="← Back to Home">← 返回首页</a>
+    <a href="https://www.youtube.com/watch?v=DUJSgMQ-4BI" target="_blank">YouTube</a>
+  </div>
+  <div class="version" id="version-tag">V1.0.0 · 2026-07-05 · SnailAI Website</div>
+</footer>
+
+<script>
+  const LANG_KEY = 'snailai-lang';
+  function applyLang(lang) {
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-zh');
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+  let savedLang = 'zh';
+  try { savedLang = localStorage.getItem(LANG_KEY) || 'zh'; } catch(e) {}
+  applyLang(savedLang);
+
+  fetch('version.json').then(r => r.json()).then(d => {
+    const el = document.getElementById('version-tag');
+    if (el && d) {
+      el.textContent = `V${d.version} · ${d.release_date} · SnailAI Website`;
+    }
+  }).catch(() => {});
+</script>
+
+</body>
+</html>
