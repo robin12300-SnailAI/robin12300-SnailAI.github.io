@@ -286,6 +286,23 @@
   }
   .service-card .link:hover { color: var(--accent-2); }
 
+  /* ===== Contact Info (inside service card) ===== */
+  .contact-info {
+    margin-top: 14px;
+    display: flex; flex-direction: column; gap: 8px;
+    padding: 14px 16px;
+    background: var(--paper-2);
+    border-radius: var(--r-md);
+    border: 1px solid var(--line);
+  }
+  .contact-row {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.84rem; color: var(--ink-2); font-weight: 500;
+  }
+  .contact-row .contact-label { font-size: 1rem; line-height: 1; }
+  .contact-row a { color: var(--ink-2); text-decoration: none; font-weight: 500; }
+  .contact-row a:hover { color: var(--accent); }
+
   /* ===== Schedule ===== */
   .schedule-section { background: var(--paper); }
   .schedule-timeline {
@@ -718,7 +735,11 @@
         <h3 data-zh="1 对 1 咨询" data-en="1-on-1 Consultation">1 对 1 咨询</h3>
         <p data-zh="针对企业主 / 高净值客户的 AI 落地咨询，含业务流程改造、AI 工具选型、团队培训。" data-en="For business owners / HNW clients — AI implementation, tool selection, team training.">针对企业主 / 高净值客户的 AI 落地咨询，含业务流程改造、AI 工具选型、团队培训。</p>
         <span class="price" data-zh="AUD $299 / 小时" data-en="AUD $299 / hour">AUD $299 / 小时</span>
-        <a href="mailto:hello@snailai.au" class="link" data-zh="预约咨询 →" data-en="Book Now →">预约咨询 →</a>
+        <div class="contact-info">
+          <div class="contact-row"><span class="contact-label">📞</span><a href="tel:+61417993551" data-zh="0417 993 551" data-en="0417 993 551">0417 993 551</a></div>
+          <div class="contact-row"><span class="contact-label">✉️</span><a href="mailto:robin12300@gmail.com" data-zh="robin12300@gmail.com" data-en="robin12300@gmail.com">robin12300@gmail.com</a></div>
+          <div class="contact-row"><span class="contact-label">💬</span><span data-zh="微信 luobinweixin8" data-en="WeChat luobinweixin8">微信 luobinweixin8</span></div>
+        </div>
       </div>
     </div>
   </div>
