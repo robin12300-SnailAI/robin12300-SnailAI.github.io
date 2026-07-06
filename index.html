@@ -369,10 +369,25 @@
     background: white;
     border: 1px solid var(--line);
     border-radius: var(--r-lg);
-    overflow: hidden;
+    overflow: visible;
     transition: all .3s ease;
+    position: relative;
   }
   .schedule-cohort:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .cohort-qr-footer {
+    position: absolute; right: 12px; bottom: 10px;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    z-index: 2;
+  }
+  .cohort-qr-footer img {
+    width: 80px; height: 80px; border-radius: 8px;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .cohort-qr-footer span {
+    font-size: 11px; font-weight: 700; color: var(--accent);
+    white-space: nowrap;
+  }
   .cohort-header {
     padding: 24px 28px 16px;
     border-bottom: 1px solid var(--line);
@@ -934,6 +949,10 @@
             <span class="cohort-value" data-zh="每周二晚 8:30 - 10:00 (AEST)" data-en="Every Tue 8:30 - 10:00 PM (AEST)">每周二晚 8:30 - 10:00 (AEST)</span>
           </div>
         </div>
+        <div class="cohort-qr-footer">
+          <img src="assets/team/qr_cohort_signup.png" alt="扫码入群报名">
+          <span data-zh="扫码入群报名" data-en="Scan to Join">扫码入群报名</span>
+        </div>
       </div>
 
       <div class="schedule-cohort">
@@ -957,6 +976,10 @@
             <span class="cohort-label" data-zh="时间" data-en="TIME">时间</span>
             <span class="cohort-value" data-zh="每周六下午 1:00 - 4:30 (AEST)" data-en="Every Sat 1:00 - 4:30 PM (AEST)">每周六下午 1:00 - 4:30 (AEST)</span>
           </div>
+        </div>
+        <div class="cohort-qr-footer">
+          <img src="assets/team/qr_cohort_signup.png" alt="扫码入群报名">
+          <span data-zh="扫码入群报名" data-en="Scan to Join">扫码入群报名</span>
         </div>
       </div>
 
@@ -983,6 +1006,10 @@
             <span class="cohort-value" data-zh="每周二晚 8:30 - 10:00 (AEDT)" data-en="Every Tue 8:30 - 10:00 PM (AEDT)">每周二晚 8:30 - 10:00 (AEDT)</span>
           </div>
         </div>
+        <div class="cohort-qr-footer">
+          <img src="assets/team/qr_cohort_signup.png" alt="扫码入群报名">
+          <span data-zh="扫码入群报名" data-en="Scan to Join">扫码入群报名</span>
+        </div>
       </div>
 
       <div class="schedule-cohort">
@@ -1006,6 +1033,10 @@
             <span class="cohort-label" data-zh="时间" data-en="TIME">时间</span>
             <span class="cohort-value" data-zh="每周六下午 1:00 - 4:30 (AEDT)" data-en="Every Sat 1:00 - 4:30 PM (AEDT)">每周六下午 1:00 - 4:30 (AEDT)</span>
           </div>
+        </div>
+        <div class="cohort-qr-footer">
+          <img src="assets/team/qr_cohort_signup.png" alt="扫码入群报名">
+          <span data-zh="扫码入群报名" data-en="Scan to Join">扫码入群报名</span>
         </div>
       </div>
     </div>
