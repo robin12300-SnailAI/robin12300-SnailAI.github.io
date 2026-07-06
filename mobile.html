@@ -448,6 +448,92 @@
   .faq-entry h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; }
   .faq-entry p { color: var(--ink-3); margin-bottom: 24px; font-size: 1.02rem; }
 
+  /* ===== All Links (链接大全) — mobile ===== */
+  .all-links {
+    background: var(--paper-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 64px 0;
+  }
+  .links-master-card {
+    background: white;
+    border-radius: var(--r-xl);
+    border: 2px solid rgba(255,91,31,0.18);
+    padding: 28px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .links-master-domain {
+    background: linear-gradient(135deg, var(--paper-2) 0%, var(--paper-3) 100%);
+    border-radius: var(--r-md);
+    padding: 16px 18px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .links-master-label {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .links-master-url {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .links-master-url:hover { color: var(--accent); }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: var(--r-md);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.2s ease;
+  }
+  .link-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 91, 31, 0.12);
+  }
+  .link-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .link-info { flex: 1; min-width: 0; }
+  .link-title { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; line-height: 1.3; }
+  .link-url {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    word-break: break-all;
+  }
+  .link-card:hover .link-url { color: var(--accent); }
+  .links-master-footer {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+  }
+
   /* ===== Schedule ===== */
   .schedule-section { background: var(--paper); }
   .schedule-timeline {
@@ -1046,6 +1132,90 @@
           <a href="https://mp.weixin.qq.com/s/RlT2T4ynOeeJYkJnu1RKUA" target="_blank" data-zh="停车指引 →" data-en="Parking Guide →">停车指引 →</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ALL LINKS ===== -->
+<section class="all-links" id="all-links">
+  <div class="section-inner">
+    <div class="section-tag" data-zh="所有链接大全" data-en="All Links Directory">所有链接大全</div>
+    <h2 class="section-title" data-zh="🐌 蜗牛 AI 官方网站" data-en="🐌 SnailAI Official Website">🐌 蜗牛 AI 官方网站</h2>
+    <p class="section-desc" data-zh="永久主域名 · 一个入口访问所有内容" data-en="Permanent domain · one entry to all content">永久主域名 · 一个入口访问所有内容</p>
+
+    <div class="links-master-card">
+      <div class="links-master-domain">
+        <span class="links-master-label" data-zh="永久主域名" data-en="Permanent Domain">永久主域名</span>
+        <a href="https://robin12300-snailai.github.io/" target="_blank" class="links-master-url">https://robin12300-snailai.github.io/</a>
+      </div>
+
+      <div class="links-grid">
+        <a href="https://robin12300-snailai.github.io/" class="link-card" target="_blank">
+          <span class="link-icon">🏠</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="官网首页" data-en="Homepage Desktop">官网首页</div>
+            <div class="link-url">/index.html</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/mobile.html" class="link-card" target="_blank">
+          <span class="link-icon">📱</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="官网手机版" data-en="Homepage Mobile">官网手机版</div>
+            <div class="link-url">/mobile.html</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/faq/" class="link-card" target="_blank">
+          <span class="link-icon">📋</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="FAQ 桌面版" data-en="FAQ Desktop">FAQ 桌面版</div>
+            <div class="link-url">/faq/</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/faq/mobile" class="link-card" target="_blank">
+          <span class="link-icon">📋</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="FAQ 手机版" data-en="FAQ Mobile">FAQ 手机版</div>
+            <div class="link-url">/faq/mobile</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/online-course/" class="link-card" target="_blank">
+          <span class="link-icon">📚</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="线上课桌面版" data-en="Online Course Desktop">线上课桌面版</div>
+            <div class="link-url">/online-course/</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/online-course/mobile.html" class="link-card" target="_blank">
+          <span class="link-icon">📚</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="线上课手机版" data-en="Online Course Mobile">线上课手机版</div>
+            <div class="link-url">/online-course/mobile.html</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/offline-course/" class="link-card" target="_blank">
+          <span class="link-icon">🏫</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="线下课桌面版" data-en="Offline Course Desktop">线下课桌面版</div>
+            <div class="link-url">/offline-course/</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/offline-course/mobile.html" class="link-card" target="_blank">
+          <span class="link-icon">🏫</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="线下课手机版" data-en="Offline Course Mobile">线下课手机版</div>
+            <div class="link-url">/offline-course/mobile.html</div>
+          </div>
+        </a>
+        <a href="https://robin12300-snailai.github.io/live-share-2026-07-04/" class="link-card" target="_blank">
+          <span class="link-icon">📊</span>
+          <div class="link-info">
+            <div class="link-title" data-zh="蜗牛 AI 财富投资技术应用直播分享会PPT" data-en="SnailAI Wealth Live Share PPT">蜗牛 AI 财富投资技术应用直播分享会PPT</div>
+            <div class="link-url">/live-share-2026-07-04/</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="links-master-footer" data-zh="💡 提示：所有链接都已通过 GitHub Pages 部署，永久有效。复制发给任何人即可。" data-en="💡 Tip: All links are deployed via GitHub Pages and permanent. Copy and share with anyone.">💡 提示：所有链接都已通过 GitHub Pages 部署，永久有效。复制发给任何人即可。</div>
     </div>
   </div>
 </section>
