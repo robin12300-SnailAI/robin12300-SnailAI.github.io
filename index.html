@@ -312,6 +312,15 @@
   }
   .service-card .link:hover { color: var(--accent-2); }
 
+  /* ===== Wealth Highlights (inside service card) ===== */
+  .wealth-highlights { margin-top: 8px; flex: 1; }
+  .wh-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 0.85rem; color: var(--ink-3); line-height: 1.55;
+    padding: 5px 0;
+  }
+  .wh-icon { flex-shrink: 0; font-size: 0.95rem; margin-top: 1px; }
+
   /* ===== Contact Info (inside service card) ===== */
   .contact-info {
     margin-top: 14px;
@@ -825,7 +834,12 @@
       <div class="service-card">
         <div class="service-icon">💰</div>
         <h3 data-zh="AI 财富管理课" data-en="AI Wealth Management">AI 财富管理课</h3>
-        <p data-zh="Robin 主讲，KSI 悉尼土地投资 + SMSF + Bradfield 西悉尼国际机场机遇。" data-en="Taught by Robin — KSI Sydney land investment + SMSF + Bradfield Western Sydney Airport opportunities.">Robin 主讲，KSI 悉尼土地投资 + SMSF + Bradfield 西悉尼国际机场机遇。</p>
+        <div class="wealth-highlights">
+          <div class="wh-item"><span class="wh-icon">📊</span><span data-zh="AI CFO 个人财富管理系统：协助管理财务、家庭预算、投资记录、资产配置、现金流分析与年度财富目标" data-en="AI CFO Personal Wealth System: manage finances, budgeting, investment tracking, asset allocation, cash flow analysis & annual wealth goals">AI CFO 个人财富管理系统：协助管理财务、家庭预算、投资记录、资产配置、现金流分析与年度财富目标</span></div>
+          <div class="wh-item"><span class="wh-icon">🦞</span><span data-zh="龙虾 AI 财富管理系统：搭建专属于您的系统，整合资产、分析投资、记录决策和长期复盘" data-en="Snail AI Wealth System: build your own system, integrate assets, analyze investments, track decisions & review long-term performance">龙虾 AI 财富管理系统：搭建专属于您的系统，整合资产、分析投资、记录决策和长期复盘</span></div>
+          <div class="wh-item"><span class="wh-icon">🏠</span><span data-zh="AI 澳洲房产深度分析：秒读合同文件（如 Section 32），全方位分析 suburb、人口、租金、回报与投资决策" data-en="AI Australian Property Analysis: read contracts instantly (e.g. Section 32), analyze suburb demographics, rents, ROI & investment decisions">AI 澳洲房产深度分析：秒读合同文件（如 Section 32），全方位分析 suburb、人口、租金、回报与投资决策</span></div>
+          <div class="wh-item"><span class="wh-icon">📈</span><span data-zh="AI 股票与资产配置风控：AI 读财报，深度研究股票与板块强度指数，实现长期使用复盘流程" data-en="AI Stocks & Asset Allocation: AI reads financial reports, deep research on stocks & sector strength indices, long-term review process">AI 股票与资产配置风控：AI 读财报，深度研究股票与板块强度指数，实现长期使用复盘流程</span></div>
+        </div>
         <span class="price" data-zh="AUD $1,999 / 高级" data-en="AUD $1,999 / Advanced">AUD $1,999 / 高级</span>
         <a href="/offline-course/" target="_blank" class="link" data-zh="查看财富课 →" data-en="View Wealth →">查看财富课 →</a>
       </div>
