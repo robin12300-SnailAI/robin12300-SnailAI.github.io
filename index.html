@@ -321,6 +321,14 @@
   }
   .wh-icon { flex-shrink: 0; font-size: 0.95rem; margin-top: 1px; }
 
+  .online-highlights { margin-top: 8px; flex: 1; }
+  .ol-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 0.85rem; color: var(--ink-3); line-height: 1.55;
+    padding: 5px 0;
+  }
+  .ol-icon { flex-shrink: 0; font-size: 0.95rem; margin-top: 1px; }
+
   /* ===== Contact Info (inside service card) ===== */
   .contact-info {
     margin-top: 14px;
@@ -827,7 +835,12 @@
       <div class="service-card">
         <div class="service-icon">💻</div>
         <h3 data-zh="线上课 · 12 课时" data-en="Online Course · 12 Lessons">线上课 · 12 课时</h3>
-        <p data-zh="3 个月系统学习，从 WorkBuddy 安装到 AI 视频/音乐创作，覆盖工作、学习、生活、投资全场景。" data-en="3 months systematic learning, from WorkBuddy setup to AI video/music creation, covering work, study, life, and investment scenarios.">3 个月系统学习，从 WorkBuddy 安装到 AI 视频/音乐创作，覆盖工作、学习、生活、投资全场景。</p>
+        <div class="online-highlights">
+          <div class="ol-item"><span class="ol-icon">🎓</span><span data-zh="输出式教学法：AI 思维和 AI 提示词语言学" data-en="Output-based Learning: AI Thinking & Prompt Engineering Linguistics">输出式教学法：AI 思维和 AI 提示词语言学</span></div>
+          <div class="ol-item"><span class="ol-icon">🚀</span><span data-zh="进化 3 阶段：个人 AI 化 → 家庭 AI 化 → 公司 AI 化" data-en="Evolution: Personal AI → Family AI → Business AI">进化 3 阶段：个人 AI 化 → 家庭 AI 化 → 公司 AI 化</span></div>
+          <div class="ol-item"><span class="ol-icon">🇦🇺</span><span data-zh="全方位澳洲本地场景落地应用：职场学业、家庭教育、商业搞钱、澳洲专属" data-en="Full Australian local scenarios: workplace, education, business, property & investing">全方位澳洲本地场景落地应用：职场学业、家庭教育、商业搞钱、澳洲专属</span></div>
+          <div class="ol-item"><span class="ol-icon">💡</span><span data-zh="终极目标：3 个月结束前实现 AI 顿悟" data-en="Ultimate Goal: Achieve AI Enlightenment in 3 months">终极目标：3 个月结束前实现 AI 顿悟</span></div>
+        </div>
         <span class="price" data-zh="AUD $599 / 3 个月" data-en="AUD $599 / 3 months">AUD $599 / 3 个月</span>
         <a href="/online-course/" target="_blank" class="link" data-zh="查看课程大纲 →" data-en="View Syllabus →">查看课程大纲 →</a>
       </div>
