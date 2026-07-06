@@ -1038,6 +1038,18 @@
     box-shadow: 0 10px 32px rgba(255,91,31,0.38);
   }
 
+  .cta-poster {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-lg);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+  }
+  .cta-poster:hover {
+    transform: scale(1.02);
+  }
+
   /* ===== FOOTER ===== */
   .footer {
     background: var(--paper-warm);
@@ -1800,7 +1812,7 @@
   <div class="cta-inner">
     <h2 data-zh="🦞 立即加入蜗牛AI线上课" data-en="🦞 Join SnailAI Online Course Now">🦞 立即加入蜗牛AI线上课</h2>
     <p data-zh="7月7日开课 · 每周二晚 8:30 – 10:30 · 仅限澳洲华人" data-en="Starts Jul 7 · Every Tue 8:30 – 10:30 PM · Exclusive for Australian Chinese">7月7日开课 · 每周二晚 8:30 – 10:30 · 仅限澳洲华人</p>
-    <a href="#" class="cta-btn" data-zh="扫码报名 →" data-en="Scan to Enroll →">扫码报名 →</a>
+    <img src="../assets/poster_online_enroll.jpg" alt="蜗牛AI线上课报名海报" class="cta-poster">
   </div>
 </section>
 
