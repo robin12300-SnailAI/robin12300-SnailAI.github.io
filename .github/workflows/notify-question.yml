@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: 推送企业微信提醒
         env:
-          WX_WEBHOOK: ${{ secrets.WX01 }}
+          WX_WEBHOOK: ${{ secrets.WNWD }}
           TITLE: ${{ github.event.discussion.title }}
           URL: ${{ github.event.discussion.html_url }}
           WHO: ${{ github.event.discussion.user.login }}
@@ -26,8 +26,8 @@ jobs:
 
           webhook = os.environ.get("WX_WEBHOOK", "").strip()
           if not webhook:
-              print("⚠️ 未检测到 WX01 密钥（企业微信 Webhook 地址）。请到仓库 "
-                    "Settings → Secrets and variables → Actions 添加名为 WX01 的密钥，"
+              print("⚠️ 未检测到 WNWD 密钥（企业微信 Webhook 地址）。请到仓库 "
+                    "Settings → Secrets and variables → Actions 添加名为 WNWD 的密钥，"
                     "值为企微群机器人 Webhook 完整 URL。本次跳过推送。")
               sys.exit(0)
 
