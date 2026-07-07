@@ -1,0 +1,63 @@
+name: 蜗牛问答·新提问推送企业微信
+
+# 一旦有人在「蜗牛问答」看板提问（= 仓库新增一条 GitHub Discussion），
+# 就向企业微信群机器人 Webhook 推送提醒：「有学生提问了，赶紧去回答」
+on:
+  discussion:
+    types: [created]
+
+# 本流程只对外请求企业微信，不需要任何仓库写权限
+permissions: {}
+
+jobs:
+  notify-wechat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 推送企业微信提醒
+        env:
+          WX_WEBHOOK: ${{ secrets.WX01 }}
+          TITLE: ${{ github.event.discussion.title }}
+          URL: ${{ github.event.discussion.html_url }}
+          WHO: ${{ github.event.discussion.user.login }}
+          CATEGORY: ${{ github.event.discussion.category.name }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, sys
+
+          webhook = os.environ.get("WX_WEBHOOK", "").strip()
+          if not webhook:
+              print("⚠️ 未检测到 WX01 密钥（企业微信 Webhook 地址）。请到仓库 "
+                    "Settings → Secrets and variables → Actions 添加名为 WX01 的密钥，"
+                    "值为企微群机器人 Webhook 完整 URL。本次跳过推送。")
+              sys.exit(0)
+
+          # 仅当提问属于「蜗牛问答」分类时才推送，避免其他讨论误触发
+          if os.environ.get("CATEGORY", "") != "蜗牛问答":
+              print(f"讨论分类为「{os.environ.get('CATEGORY','')}」，非「蜗牛问答」，跳过推送。")
+              sys.exit(0)
+
+          title = os.environ.get("TITLE", "")
+          url = os.environ.get("URL", "")
+          who = os.environ.get("WHO", "")
+          content = (
+              "### 🦞 有学生提问了，赶紧去回答\n\n"
+              f"**提问人**：{who}\n"
+              f"**问题**：{title}\n"
+              f"[点击查看并回答]({url})"
+          )
+          payload = json.dumps(
+              {"msgtype": "markdown", "markdown": {"content": content}},
+              ensure_ascii=False,
+          ).encode("utf-8")
+          req = urllib.request.Request(
+              webhook,
+              data=payload,
+              headers={"Content-Type": "application/json"},
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  print("企微返回：", r.read().decode("utf-8"))
+          except Exception as e:
+              print("推送失败：", e)
+              sys.exit(1)
+          PY
