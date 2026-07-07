@@ -31,9 +31,9 @@ jobs:
                     "值为企微群机器人 Webhook 完整 URL。本次跳过推送。")
               sys.exit(0)
 
-          # 仅当提问属于「蜗牛问答」分类时才推送，避免其他讨论误触发
-          if os.environ.get("CATEGORY", "") != "蜗牛问答":
-              print(f"讨论分类为「{os.environ.get('CATEGORY','')}」，非「蜗牛问答」，跳过推送。")
+          # 仅当提问属于「Q&A」分类时才推送，避免其他讨论误触发
+          if os.environ.get("CATEGORY", "") != "Q&A":
+              print(f"讨论分类为「{os.environ.get('CATEGORY','')}」，非「Q&A」，跳过推送。")
               sys.exit(0)
 
           title = os.environ.get("TITLE", "")
