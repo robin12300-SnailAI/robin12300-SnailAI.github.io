@@ -97,6 +97,24 @@
   .tw-icon { font-size: 42px; margin-bottom: 16px; }
   .tw-card h3 { font-size: 20px; margin-bottom: 8px; }
   .tw-card p { color: var(--ink-3); font-size: 14px; }
+
+  /* ===== Legend (AI 能力清单 项目说明) ===== */
+  .tw-legend { margin-top: 36px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px 32px; box-shadow: var(--shadow-sm); }
+  .tw-legend .lg-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .tw-legend .lg-head .lg-ico { font-size: 20px; }
+  .tw-legend .lg-head h2 { font-size: 18px; letter-spacing: -0.01em; }
+  .tw-legend .lg-head .lg-sub { font-size: 12px; color: var(--ink-3); font-weight: 500; margin-left: auto; }
+  .tw-legend ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; counter-reset: none; }
+  .tw-legend li { display: flex; gap: 14px; align-items: flex-start; font-size: 14px; line-height: 1.65; color: var(--ink-2); }
+  .tw-legend li .badge {
+    flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 6px rgba(255,91,31,.25);
+  }
+  .tw-legend li .lg-text { padding-top: 2px; }
+  .tw-legend .lg-note { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--ink-3); }
+  .tw-legend .lg-note b { color: var(--accent); }
   .tw-go { display: inline-block; margin-top: 18px; color: var(--accent); font-weight: 700; font-size: 14px; }
   .tw-placeholder {
     display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
@@ -176,6 +194,26 @@
       <h3 data-zh="教学资料库" data-en="Teaching Library">教学资料库</h3>
       <p data-zh="待补充链接（联系 Robin 添加）" data-en="Link pending (ask Robin to add)">待补充链接（联系 Robin 添加）</p>
     </div>
+  </div>
+
+  <div class="tw-legend">
+    <div class="lg-head">
+      <span class="lg-ico">📋</span>
+      <h2 data-zh="AI 能力清单 · 项目说明" data-en="AI Skill Checklist · Key">AI 能力清单 · 项目说明</h2>
+      <span class="lg-sub" data-zh="表格列头 ①~⑨ 对应如下" data-en="Columns ①~⑨ map to:">表格列头 ①~⑨ 对应如下</span>
+    </div>
+    <ol>
+      <li><span class="badge">①</span><span class="lg-text">前往腾讯云下载 WorkBuddy 客户端</span></li>
+      <li><span class="badge">②</span><span class="lg-text">使用微信账号登录并完成激活</span></li>
+      <li><span class="badge">③</span><span class="lg-text">确认能正常对话，安装技能，并且调用技能和专家进行简单对话，例如怎么使用你？</span></li>
+      <li><span class="badge">④</span><span class="lg-text">参加 WorkBuddy 成长计划，赢取越多越好积分（赢积分的同时熟悉功能）</span></li>
+      <li><span class="badge">⑤</span><span class="lg-text">给龙虾介绍做自我介绍：姓名，性别，年龄，职业，兴趣爱好，以及做事风格等</span></li>
+      <li><span class="badge">⑥</span><span class="lg-text">龙虾助理设置：企业微信和微信都要设置好</span></li>
+      <li><span class="badge">⑦</span><span class="lg-text">在电脑里面创建一个文件夹，起名《龙虾文件夹》</span></li>
+      <li><span class="badge">⑧</span><span class="lg-text">安装微信输入法：手机和电脑同时安装，然后设置右边 Shift 按键为 AI 录音转文字</span></li>
+      <li><span class="badge">⑨</span><span class="lg-text">调试电脑 Zoom 语音和共享成功使用，方便直播课堂分享</span></li>
+    </ol>
+    <p class="lg-note" data-zh="每列可分别勾选 学员自查 / 助教审核 / 讲师审核（绿、蓝、橙三色标签）。" data-en="Each column can be checked for self-check / TA review / instructor review (green, blue, orange tags).">每列可分别勾选 学员自查 / 助教审核 / 讲师审核（绿、蓝、橙三色标签）。</p>
   </div>
 </section>
 
