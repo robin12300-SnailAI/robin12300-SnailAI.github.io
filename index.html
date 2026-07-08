@@ -752,6 +752,33 @@
     .contact-person { padding: 20px 24px; }
     .contact-person-header img.qr-badge { width: 56px; height: 56px; }
   }
+
+  /* ===== MOBILE BOTTOM NAV (homepage root, mobile-only) ===== */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    display: none; /* hidden on desktop, shown on mobile via media query below */
+    grid-template-columns: repeat(4, 1fr);
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--line);
+    padding: 6px 0 8px;
+  }
+  .bottom-nav a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 7px 2px;
+    text-decoration: none; color: var(--ink-3);
+    font-size: 11px; font-weight: 500;
+    transition: color .2s;
+  }
+  .bottom-nav a:active,
+  .bottom-nav a:hover { color: var(--accent); }
+  .bottom-nav a .bnav-icon { font-size: 19px; margin-bottom: 3px; line-height: 1; }
+  .bottom-nav a .bnav-label { letter-spacing: .02em; white-space: nowrap; }
+  @media (max-width: 768px) {
+    .bottom-nav { display: grid; }
+    body { padding-bottom: 106px; }
+  }
 </style>
 </head>
 <body>
@@ -1374,7 +1401,7 @@
     <a href="#all-links" data-zh="链接大全" data-en="All Links">链接大全</a>
     <a href="https://www.youtube.com/playlist?list=PLrAXtmRdnEQy6nuLMfO9tV4rnQ5w8e6yA" target="_blank" data-zh="YouTube" data-en="YouTube">YouTube</a>
   </div>
-  <div class="version" id="version-tag">V1.0.0 · 2026-07-05 · SnailAI Website</div>
+  <div class="version" id="version-tag">V1.0.3 · 2026-07-08 · SnailAI Website</div>
 </footer>
 
 <script>
@@ -1406,6 +1433,18 @@
     }
   }).catch(() => {});
 </script>
+
+<!-- Mobile Bottom Nav (homepage root) -->
+<nav class="bottom-nav">
+  <a href="#services"><span class="bnav-icon">🛎️</span><span class="bnav-label">服务</span></a>
+  <a href="#schedule"><span class="bnav-icon">🗓️</span><span class="bnav-label">课程表</span></a>
+  <a href="#videos"><span class="bnav-icon">🎬</span><span class="bnav-label">视频</span></a>
+  <a href="/faq/mobile"><span class="bnav-icon">📋</span><span class="bnav-label">FAQ</span></a>
+  <a href="https://robin12300-snailai.github.io/snailai-portal/login.html" target="_blank" rel="noopener"><span class="bnav-icon">🔑</span><span class="bnav-label">学员登录</span></a>
+  <a href="/qa/mobile.html"><span class="bnav-icon">💬</span><span class="bnav-label">蜗牛问答</span></a>
+  <a href="#contact"><span class="bnav-icon">📞</span><span class="bnav-label">联系我们</span></a>
+  <a href="#all-links"><span class="bnav-icon">🔗</span><span class="bnav-label">链接大全</span></a>
+</nav>
 
 </body>
 </html>
