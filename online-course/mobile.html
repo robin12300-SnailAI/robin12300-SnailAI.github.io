@@ -76,8 +76,10 @@
   /* ===== VERSION TAG ===== */
   .version-tag {
     position: fixed;
-    top: 16px;
-    left: 14px;
+    bottom: 10px;
+    right: 10px;
+    top: auto;
+    left: auto;
     z-index: 1000;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
@@ -91,6 +93,68 @@
     backdrop-filter: blur(8px);
   }
 
+  /* ===== TOP NAV (fixed, visible links) ===== */
+  .topnav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: rgba(252,252,250,0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topnav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+  .topnav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .topnav-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+  }
+  .topnav-brand span {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+  .topnav .lang-switch {
+    position: static;
+    top: auto; right: auto; left: auto;
+    z-index: auto;
+    background: var(--surface);
+    border-color: var(--border-strong);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .topnav-links {
+    display: flex;
+    border-top: 1px solid var(--border);
+  }
+  .topnav-links a {
+    flex: 1;
+    text-align: center;
+    padding: 11px 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-left: 1px solid var(--border);
+  }
+  .topnav-links a:first-child { border-left: none; }
+  .topnav-links a.active { color: var(--accent); }
+  .topnav-links a:active { background: var(--accent-light); }
+
   /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
@@ -101,7 +165,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: 56px 20px 40px;
+    padding: 100px 20px 40px;
   }
 
   .hero::before {
@@ -960,11 +1024,24 @@
 </head>
 <body>
 
-<!-- LANG SWITCH -->
-<div class="lang-switch">
-  <button class="lang-btn active" onclick="setLang('zh')" data-lang="zh">中文</button>
-  <button class="lang-btn" onclick="setLang('en')" data-lang="en">EN</button>
-</div>
+<!-- ===== TOP NAV ===== -->
+<nav class="topnav">
+  <div class="topnav-bar">
+    <a class="topnav-brand" href="/mobile.html">
+      <img class="topnav-logo" src="../assets/snailai_logo.png" alt="蜗牛AI">
+      <span>蜗牛AI</span>
+    </a>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('zh')" data-lang="zh">中文</button>
+      <button class="lang-btn" onclick="setLang('en')" data-lang="en">EN</button>
+    </div>
+  </div>
+  <div class="topnav-links">
+    <a href="../online-course/mobile.html" class="active">线上课</a>
+    <a href="../offline-course/mobile.html">线下课</a>
+    <a href="../faq/mobile.html">FAQ</a>
+  </div>
+</nav>
 
 <!-- VERSION TAG -->
 <div class="version-tag">V2.15 · 2026-07-05</div>

@@ -71,48 +71,57 @@
   }
   img, svg { display: block; }
 
-  /* ===== NAV ===== */
-  .nav {
+  /* ===== TOP NAV (fixed, visible links) ===== */
+  .topnav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 200;
     background: rgba(245,239,227,0.94);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule-soft);
-    padding: 10px 18px;
+  }
+  .topnav-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px 18px;
   }
-  .nav-logo {
+  .topnav-brand {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
     color: var(--ink);
   }
-  .nav-logo-icon { width: 30px; height: 30px; }
-  .nav-logo-img {
-    width: 36px;
-    height: 36px;
+  .topnav-logo {
+    width: 30px;
+    height: 30px;
     object-fit: contain;
     display: block;
   }
-  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-  .nav-logo-text .cn {
+  .topnav-brand span {
     font-family: var(--font-display-zh);
-    font-size: 0.95rem;
     font-weight: 700;
+    font-size: 0.95rem;
   }
-  .nav-logo-text .en {
-    font-family: var(--font-display-en);
-    font-size: 0.58rem;
-    color: var(--gold);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-top: 1px;
+  .topnav-links {
+    display: flex;
+    border-top: 1px solid var(--rule-soft);
   }
+  .topnav-links a {
+    flex: 1;
+    text-align: center;
+    padding: 11px 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-mute);
+    text-decoration: none;
+    border-left: 1px solid var(--rule-soft);
+  }
+  .topnav-links a:first-child { border-left: none; }
+  .topnav-links a.active { color: var(--gold); }
+  .topnav-links a:active { background: var(--bg-deep); }
   .lang-switch {
     display: flex;
     gap: 2px;
@@ -140,7 +149,7 @@
 
   /* ===== HERO ===== */
   .hero {
-    padding: 90px 20px 36px;
+    padding: 100px 20px 36px;
     position: relative;
   }
   .hero-masthead {
@@ -1226,8 +1235,10 @@
   /* ===== VERSION TAG ===== */
   .version-tag {
     position: fixed;
-    top: 16px;
-    left: 14px;
+    bottom: 10px;
+    right: 10px;
+    top: auto;
+    left: auto;
     z-index: 1000;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
@@ -1246,18 +1257,22 @@
 <!-- VERSION TAG -->
 <div class="version-tag">V1.0.0 · 2026-07-05</div>
 
-<!-- ====================== NAV ====================== -->
-<nav class="nav">
-  <a class="nav-logo" href="#top">
-    <img class="nav-logo-img" src="../assets/snailai_logo.png" alt="蜗牛AI · Snail AI" data-zh-alt="蜗牛AI 官方 Logo" data-en-alt="SnailAI Official Logo">
-    <div class="nav-logo-text">
-      <span class="cn" data-zh="蜗牛AI · AI澳洲财富线下课" data-en="SnailAI · AI Australia Wealth Offline Course">蜗牛AI · AI澳洲财富线下课</span>
-      <span class="en" data-zh="SnailAI · 财富投资课程" data-en="SnailAI · Wealth Investing">SnailAI · 财富投资课程</span>
+<!-- ====================== TOP NAV ====================== -->
+<nav class="topnav">
+  <div class="topnav-bar">
+    <a class="topnav-brand" href="/mobile.html">
+      <img class="topnav-logo" src="../assets/snailai_logo.png" alt="蜗牛AI · Snail AI">
+      <span>蜗牛AI</span>
+    </a>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="en">EN</button>
     </div>
-  </a>
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="zh">中文</button>
-    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <div class="topnav-links">
+    <a href="../online-course/mobile.html">线上课</a>
+    <a href="../offline-course/mobile.html" class="active">线下课</a>
+    <a href="../faq/mobile.html">FAQ</a>
   </div>
 </nav>
 
