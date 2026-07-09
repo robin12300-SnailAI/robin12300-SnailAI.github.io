@@ -1,8 +1,8 @@
 {
   "name": "SnailAI Official Website",
-  "version": "1.0.3",
-  "release_date": "2026-07-08",
-  "last_updated": "2026-07-08",
+  "version": "1.0.4",
+  "release_date": "2026-07-09",
+  "last_updated": "2026-07-09",
   "domain": "https://robin12300-snailai.github.io/",
   "deploy_target": "GitHub Pages",
   "owner": {
@@ -28,6 +28,7 @@
     "offline_course": "/offline-course/"
   },
   "changelog": [
+    "1.0.4 (2026-07-09): Fix bottom-nav grid 4→3 columns so the 9 buttons (服务/课程表/视频/FAQ/学员登录/助教登录/蜗牛问答/联系我们/链接大全) form a clean 3×3 on mobile; body padding-bottom 106px→170px to clear taller nav; desktop unchanged",
     "1.0.3 (2026-07-08): Add mobile-only bottom nav to index.html (homepage root) too — phone visitors opening / now get the 8 quick-jump buttons (服务/课程表/视频/FAQ/学员登录/蜗牛问答/联系我们/链接大全); desktop unchanged",
     "1.0.2 (2026-07-08): Add fixed mobile bottom nav to homepage — 服务/课程表/视频/FAQ/学员登录/蜗牛问答/联系我们/链接大全 (mobile-only, mirrors FAQ behavior)",
     "1.0.0 (2026-07-05): Initial release on GitHub Pages — home, FAQ, online course, offline course, assets",
